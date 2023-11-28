@@ -10,6 +10,8 @@
 		DFA20ABC2B1660AB00A66663 /* CoinRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ABB2B1660AB00A66663 /* CoinRepository.swift */; };
 		DFA20ABE2B1660CD00A66663 /* CacheVersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ABD2B1660CD00A66663 /* CacheVersionRepository.swift */; };
 		DFA20AC02B16672600A66663 /* ListCoinsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ABF2B16672600A66663 /* ListCoinsComposer.swift */; };
+		DFA20AC52B16A37D00A66663 /* InternetErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AC42B16A37D00A66663 /* InternetErrorView.swift */; };
+		DFA20AC92B16A42300A66663 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AC82B16A42300A66663 /* Components.swift */; };
 		DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */; };
 		DFB1E8B22B1506350076008E /* ListCoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8B12B1506350076008E /* ListCoinsView.swift */; };
 		DFB1E8B42B1506360076008E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1E8B32B1506360076008E /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		DFA20ABB2B1660AB00A66663 /* CoinRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRepository.swift; sourceTree = "<group>"; };
 		DFA20ABD2B1660CD00A66663 /* CacheVersionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheVersionRepository.swift; sourceTree = "<group>"; };
 		DFA20ABF2B16672600A66663 /* ListCoinsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsComposer.swift; sourceTree = "<group>"; };
+		DFA20AC42B16A37D00A66663 /* InternetErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetErrorView.swift; sourceTree = "<group>"; };
+		DFA20AC82B16A42300A66663 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		DFB1E8AC2B1506350076008E /* CryptoSphere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoSphere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSphereApp.swift; sourceTree = "<group>"; };
 		DFB1E8B12B1506350076008E /* ListCoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsView.swift; sourceTree = "<group>"; };
@@ -130,6 +134,14 @@
 				DFA20ABD2B1660CD00A66663 /* CacheVersionRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DFA20AC32B16A36400A66663 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				DFA20AC42B16A37D00A66663 /* InternetErrorView.swift */,
+			);
+			path = "UI Components";
 			sourceTree = "<group>";
 		};
 		DFB1E8A32B1506350076008E = {
@@ -346,9 +358,11 @@
 		DFB1E90A2B1619470076008E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				DFA20AC32B16A36400A66663 /* UI Components */,
 				DFB1E90B2B16197C0076008E /* DesignSystem.swift */,
 				DFB1E90D2B1619B40076008E /* Backgrounds.swift */,
 				DFB1E90F2B1619CD0076008E /* FontColors.swift */,
+				DFA20AC82B16A42300A66663 /* Components.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -514,6 +528,7 @@
 				DFB1E8EE2B1522480076008E /* URLSessionHTTPClient.swift in Sources */,
 				DFB1E8EC2B1522350076008E /* APICallError.swift in Sources */,
 				DFB1E9172B162DBD0076008E /* RemoteDollarExchange.swift in Sources */,
+				DFA20AC92B16A42300A66663 /* Components.swift in Sources */,
 				DFB1E9032B152C6F0076008E /* RemoteCoinLoaderService.swift in Sources */,
 				DFB1E9272B1655CC0076008E /* CoredataPersistanceManager.swift in Sources */,
 				DFB1E90C2B16197C0076008E /* DesignSystem.swift in Sources */,
@@ -531,6 +546,7 @@
 				DFB1E9092B1562630076008E /* Image+.swift in Sources */,
 				DFA20AC02B16672600A66663 /* ListCoinsComposer.swift in Sources */,
 				DFB1E9002B152AD90076008E /* Coin.swift in Sources */,
+				DFA20AC52B16A37D00A66663 /* InternetErrorView.swift in Sources */,
 				DFB1E8F32B1522FB0076008E /* EndpointProtocol.swift in Sources */,
 				DFB1E9102B1619CD0076008E /* FontColors.swift in Sources */,
 				DFB1E9232B16499D0076008E /* CoinCache.xcdatamodeld in Sources */,

@@ -23,7 +23,24 @@ struct CoinCacheManager: CoinCache {
     }
 
     func tryFetchFromCache() throws -> [DisplayedCoin] {
-        try coinRepository.readCoins()
+        if try coinRepository.coinsIsEmpty() {
+            throw CacheError()
+        } else {
+            try coinRepository.readCoins()
+        }
+    }
+
+    func lastCacheMessage() throws -> String {
+        guard let lastDate = try cacheVersionrepository.getLastDate() else { return "invalid cache" }
+        
+        let calendar = Calendar.current
+
+        let lastCacheHour = calendar.component(.hour, from: lastDate)
+        let lastCacheDay = calendar.component(.day, from: lastDate)
+        let lastCacheMonth = calendar.component(.month, from: lastDate)
+        let lastCacheMinute = calendar.component(.minute, from: lastDate)
+
+        return "connection error, this is a list saved in internal memory at \(lastCacheDay)/\(lastCacheMonth) - \(lastCacheHour):\(lastCacheMinute)"
     }
 
     private func updateCacheIfNeeded(for lastDate: Date, _ coins: [DisplayedCoin]) throws {

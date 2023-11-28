@@ -23,6 +23,7 @@ extension RemoteCoinLoaderService: CoinLoader {
     }
     
     func fetchCoinList() async throws -> [Coin] {
+        throw APICallError.invalidAuth
         if let data = try await httpClient.request(endpoint: CoinGeckoEndpoint(path: "/api/v3/search/trending")) {
             let coins = try CoinMapper().toBusiness(from: data)
 

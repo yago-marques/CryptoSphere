@@ -18,12 +18,15 @@ struct ListCoinsFeature {
         var loading = false
         var cacheUsed = false
         var internetErrorAndCacheNotAvailable = false
+        var cacheMessage = ""
+        var internetErrorMessage = ""
     }
 
     enum Action {
         case onAppear
         case onAppearResponse(coins: [DisplayedCoin])
         case apiFailureAndCacheAvailable(cachedCoins: [DisplayedCoin])
+        case setCacheMessage(message: String)
         case apiAndCacheFailure
     }
 
@@ -43,13 +46,20 @@ struct ListCoinsFeature {
 
             case .apiFailureAndCacheAvailable(cachedCoins: let cachedCoins):
                 state.loading = false
-                state.cacheUsed = true
-                state.coins = cachedCoins
+                if !cachedCoins.isEmpty {
+                    state.cacheUsed = true
+                    state.coins = cachedCoins
+                }
+                return .none
+
+            case .setCacheMessage(message: let message):
+                state.cacheMessage = message
                 return .none
 
             case .apiAndCacheFailure:
                 state.loading = false
                 state.internetErrorAndCacheNotAvailable = true
+                state.internetErrorMessage = "Connection fail"
                 return .none
             }
 
@@ -67,11 +77,15 @@ private extension ListCoinsFeature {
 
             await send(.onAppearResponse(coins: coins))
         } catch is APICallError {
-            let cachedCoins = try cacheManager.tryFetchFromCache()
+            do {
+                let cachedCoins = try cacheManager.tryFetchFromCache()
+                let cacheMessage = try cacheManager.lastCacheMessage()
 
-            await send(.apiFailureAndCacheAvailable(cachedCoins: cachedCoins))
-        } catch {
-            await send(.apiAndCacheFailure)
+                await send(.setCacheMessage(message: cacheMessage))
+                await send(.apiFailureAndCacheAvailable(cachedCoins: cachedCoins))
+            } catch is CacheError {
+                await send(.apiAndCacheFailure)
+            }
         }
     }
 

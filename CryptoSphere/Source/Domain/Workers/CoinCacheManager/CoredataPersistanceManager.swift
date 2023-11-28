@@ -72,10 +72,16 @@ extension CoredataPersistanceManager: CacheVersionRepository {
     
     func registerUpdate() throws {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<LastCoinCache>(entityName: "LastCoinCache")
-        let coredataEntities = try context.fetch(fetchRequest)
-        guard let entity = coredataEntities.first else { return }
-        entity.date = Date()
+
+        if try getLastDate() != nil {
+            let fetchRequest = NSFetchRequest<LastCoinCache>(entityName: "LastCoinCache")
+            let coredataEntities = try context.fetch(fetchRequest)
+            guard let entity = coredataEntities.first else { return }
+            entity.date = Date()
+        } else {
+            let entity = LastCoinCache(context: context)
+            entity.date = Date()
+        }
 
         try context.save()
     }
