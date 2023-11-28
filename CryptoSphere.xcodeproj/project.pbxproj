@@ -32,9 +32,11 @@
 		DFB1E9152B162A550076008E /* CoinGeckoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9142B162A550076008E /* CoinGeckoEndpoint.swift */; };
 		DFB1E9172B162DBD0076008E /* RemoteDollarExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9162B162DBD0076008E /* RemoteDollarExchange.swift */; };
 		DFB1E9192B1635220076008E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9182B1635220076008E /* String+.swift */; };
-		DFB1E91B2B163E430076008E /* CoinCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E91A2B163E430076008E /* CoinCacheRepository.swift */; };
+		DFB1E91B2B163E430076008E /* CoinCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E91A2B163E430076008E /* CoinCache.swift */; };
 		DFB1E91E2B16410E0076008E /* CoinCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E91D2B16410E0076008E /* CoinCacheManager.swift */; };
 		DFB1E9232B16499D0076008E /* CoinCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9212B16499D0076008E /* CoinCache.xcdatamodeld */; };
+		DFB1E9252B1655020076008E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9242B1655020076008E /* Persistence.swift */; };
+		DFB1E9272B1655CC0076008E /* CoredataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9262B1655CC0076008E /* CoredataPersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,9 +84,11 @@
 		DFB1E9142B162A550076008E /* CoinGeckoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoEndpoint.swift; sourceTree = "<group>"; };
 		DFB1E9162B162DBD0076008E /* RemoteDollarExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDollarExchange.swift; sourceTree = "<group>"; };
 		DFB1E9182B1635220076008E /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		DFB1E91A2B163E430076008E /* CoinCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCacheRepository.swift; sourceTree = "<group>"; };
+		DFB1E91A2B163E430076008E /* CoinCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCache.swift; sourceTree = "<group>"; };
 		DFB1E91D2B16410E0076008E /* CoinCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCacheManager.swift; sourceTree = "<group>"; };
 		DFB1E9222B16499D0076008E /* CoinCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinCache.xcdatamodel; sourceTree = "<group>"; };
+		DFB1E9242B1655020076008E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DFB1E9262B1655CC0076008E /* CoredataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataPersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */,
+				DFB1E9242B1655020076008E /* Persistence.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -267,7 +272,7 @@
 			children = (
 				DFB1E8FE2B152AC40076008E /* BusinessModels */,
 				DFB1E8FC2B15276D0076008E /* CoinLoader.swift */,
-				DFB1E91A2B163E430076008E /* CoinCacheRepository.swift */,
+				DFB1E91A2B163E430076008E /* CoinCache.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB1E91D2B16410E0076008E /* CoinCacheManager.swift */,
+				DFB1E9262B1655CC0076008E /* CoredataPersistanceManager.swift */,
 				DFB1E9212B16499D0076008E /* CoinCache.xcdatamodeld */,
 			);
 			path = CoinCacheManager;
@@ -492,12 +498,14 @@
 				DFB1E8EC2B1522350076008E /* APICallError.swift in Sources */,
 				DFB1E9172B162DBD0076008E /* RemoteDollarExchange.swift in Sources */,
 				DFB1E9032B152C6F0076008E /* RemoteCoinLoaderService.swift in Sources */,
+				DFB1E9272B1655CC0076008E /* CoredataPersistanceManager.swift in Sources */,
 				DFB1E90C2B16197C0076008E /* DesignSystem.swift in Sources */,
+				DFB1E9252B1655020076008E /* Persistence.swift in Sources */,
 				DFB1E91E2B16410E0076008E /* CoinCacheManager.swift in Sources */,
 				DFB1E9052B152DEB0076008E /* CoinMapper.swift in Sources */,
 				DFB1E8DD2B150AAB0076008E /* ListCoinsFeature.swift in Sources */,
 				DFB1E9152B162A550076008E /* CoinGeckoEndpoint.swift in Sources */,
-				DFB1E91B2B163E430076008E /* CoinCacheRepository.swift in Sources */,
+				DFB1E91B2B163E430076008E /* CoinCache.swift in Sources */,
 				DFB1E8F12B1522C20076008E /* HTTPClientProtocol.swift in Sources */,
 				DFB1E8FD2B15276D0076008E /* CoinLoader.swift in Sources */,
 				DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */,

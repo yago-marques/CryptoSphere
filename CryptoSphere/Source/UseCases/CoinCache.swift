@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CoinCacheRepository {
+protocol CoinCache {
     func saveInCacheIfNeeded(_ coins: [DisplayedCoin]) throws
     func tryFetchFromCatch() throws -> [DisplayedCoin]
 }

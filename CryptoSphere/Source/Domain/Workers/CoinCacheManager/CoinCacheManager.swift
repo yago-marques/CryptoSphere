@@ -9,7 +9,7 @@ import CoreData
 
 struct CacheError: Error { }
 
-struct CoinCacheManager: CoinCacheRepository {
+struct CoinCacheManager: CoinCache {
     func saveInCacheIfNeeded(_ coins: [DisplayedCoin]) throws {
 
     }

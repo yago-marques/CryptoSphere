@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct CoinMapper {
     let decoder: JSONDecoder
@@ -50,5 +51,26 @@ struct CoinMapper {
                 decimal: business.bitcoinPrice * exchange
             ).stringValue
         )
+    }
+
+    static func toDisplayed(from local: CoinEntity) -> DisplayedCoin {
+        .init(
+            id: local.id ?? "",
+            name: local.name ?? "",
+            marketRank: Int(local.marketRank),
+            imageUrl: local.imageUrl ?? "",
+            dollarPrice: local.dollarPrice ?? ""
+        )
+    }
+
+    static func toCached(from displayed: DisplayedCoin, context: NSManagedObjectContext) -> CoinEntity {
+        let entity = CoinEntity(context: context)
+        entity.id = displayed.id
+        entity.name = displayed.name
+        entity.imageUrl = displayed.imageUrl
+        entity.dollarPrice = displayed.dollarPrice
+        entity.marketRank = Int64(displayed.marketRank)
+
+        return entity
     }
 }

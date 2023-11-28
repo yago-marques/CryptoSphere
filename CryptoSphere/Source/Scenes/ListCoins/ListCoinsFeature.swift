@@ -11,7 +11,7 @@ struct DisplayedCoin: Equatable, Identifiable {
 @Reducer
 struct ListCoinsFeature {
     let coinLoader: CoinLoader
-    let cacheManager: CoinCacheRepository
+    let cacheManager: CoinCache
 
     struct State: Equatable {
         var coins = [DisplayedCoin]()
