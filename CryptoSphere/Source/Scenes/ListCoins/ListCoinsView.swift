@@ -31,6 +31,7 @@ struct ListCoinsView: View {
                 }
                 .navigationTitle("Coins")
                 .listStyle(.plain)
+                .background(DS.backgrounds.secondary)
             }
             .onAppear {
                 viewStore.send(.onAppear)

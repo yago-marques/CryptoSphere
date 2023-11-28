@@ -26,6 +26,9 @@
 		DFB1E9032B152C6F0076008E /* RemoteCoinLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9022B152C6F0076008E /* RemoteCoinLoaderService.swift */; };
 		DFB1E9052B152DEB0076008E /* CoinMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9042B152DEB0076008E /* CoinMapper.swift */; };
 		DFB1E9092B1562630076008E /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9082B1562630076008E /* Image+.swift */; };
+		DFB1E90C2B16197C0076008E /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E90B2B16197C0076008E /* DesignSystem.swift */; };
+		DFB1E90E2B1619B40076008E /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E90D2B1619B40076008E /* Backgrounds.swift */; };
+		DFB1E9102B1619CD0076008E /* FontColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E90F2B1619CD0076008E /* FontColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		DFB1E9022B152C6F0076008E /* RemoteCoinLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCoinLoaderService.swift; sourceTree = "<group>"; };
 		DFB1E9042B152DEB0076008E /* CoinMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMapper.swift; sourceTree = "<group>"; };
 		DFB1E9082B1562630076008E /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
+		DFB1E90B2B16197C0076008E /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		DFB1E90D2B1619B40076008E /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
+		DFB1E90F2B1619CD0076008E /* FontColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,7 @@
 		DFB1E8E62B1521420076008E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DFB1E90A2B1619470076008E /* DesignSystem */,
 				DFB1E9062B1562490076008E /* Utils */,
 				DFB1E8F72B1523DE0076008E /* Mappers */,
 				DFB1E8F42B15235D0076008E /* Domain */,
@@ -296,6 +303,16 @@
 				DFB1E9082B1562630076008E /* Image+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DFB1E90A2B1619470076008E /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				DFB1E90B2B16197C0076008E /* DesignSystem.swift */,
+				DFB1E90D2B1619B40076008E /* Backgrounds.swift */,
+				DFB1E90F2B1619CD0076008E /* FontColors.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +456,7 @@
 				DFB1E8EE2B1522480076008E /* URLSessionHTTPClient.swift in Sources */,
 				DFB1E8EC2B1522350076008E /* APICallError.swift in Sources */,
 				DFB1E9032B152C6F0076008E /* RemoteCoinLoaderService.swift in Sources */,
+				DFB1E90C2B16197C0076008E /* DesignSystem.swift in Sources */,
 				DFB1E9052B152DEB0076008E /* CoinMapper.swift in Sources */,
 				DFB1E8DD2B150AAB0076008E /* ListCoinsFeature.swift in Sources */,
 				DFB1E8F12B1522C20076008E /* HTTPClientProtocol.swift in Sources */,
@@ -447,6 +465,8 @@
 				DFB1E9092B1562630076008E /* Image+.swift in Sources */,
 				DFB1E9002B152AD90076008E /* Coin.swift in Sources */,
 				DFB1E8F32B1522FB0076008E /* EndpointProtocol.swift in Sources */,
+				DFB1E9102B1619CD0076008E /* FontColors.swift in Sources */,
+				DFB1E90E2B1619B40076008E /* Backgrounds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
