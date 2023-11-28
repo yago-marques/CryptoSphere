@@ -10,12 +10,26 @@ import CoreData
 struct CacheError: Error { }
 
 struct CoinCacheManager: CoinCache {
-    func saveInCacheIfNeeded(_ coins: [DisplayedCoin]) throws {
+    let coinRepository: CoinRepository
+    let cacheVersionrepository: CacheVersionRepository
 
+    func saveInCacheIfNeeded(_ coins: [DisplayedCoin]) throws {
+        if let lastCacheDate = try cacheVersionrepository.getLastDate() {
+            try updateCacheIfNeeded(for: lastCacheDate, coins)
+        } else {
+            try coinRepository.saveCoins(coins)
+            try cacheVersionrepository.registerUpdate()
+        }
     }
 
-    func tryFetchFromCatch() throws -> [DisplayedCoin] {
-        []
+    func tryFetchFromCache() throws -> [DisplayedCoin] {
+        try coinRepository.readCoins()
+    }
+
+    private func updateCacheIfNeeded(for lastDate: Date, _ coins: [DisplayedCoin]) throws {
+        if canResetCache(for: lastDate) {
+            try coinRepository.replaceCoins(for: coins)
+        }
     }
 
     private func canResetCache(for lastDate: Date) -> Bool {
@@ -36,8 +50,4 @@ struct CoinCacheManager: CoinCache {
             return false
         }
     }
-}
-
-private extension CoinCacheManager {
-    
 }

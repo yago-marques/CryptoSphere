@@ -9,5 +9,5 @@ import Foundation
 
 protocol CoinCache {
     func saveInCacheIfNeeded(_ coins: [DisplayedCoin]) throws
-    func tryFetchFromCatch() throws -> [DisplayedCoin]
+    func tryFetchFromCache() throws -> [DisplayedCoin]
 }

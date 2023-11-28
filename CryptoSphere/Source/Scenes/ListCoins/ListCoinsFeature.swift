@@ -62,7 +62,7 @@ private extension ListCoinsFeature {
 
             return coins
         } catch is APICallError {
-            let cachedCoins = try cacheManager.tryFetchFromCatch()
+            let cachedCoins = try cacheManager.tryFetchFromCache()
 
             return cachedCoins
         }

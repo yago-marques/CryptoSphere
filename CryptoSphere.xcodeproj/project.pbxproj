@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFA20ABC2B1660AB00A66663 /* CoinRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ABB2B1660AB00A66663 /* CoinRepository.swift */; };
+		DFA20ABE2B1660CD00A66663 /* CacheVersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ABD2B1660CD00A66663 /* CacheVersionRepository.swift */; };
+		DFA20AC02B16672600A66663 /* ListCoinsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ABF2B16672600A66663 /* ListCoinsComposer.swift */; };
 		DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */; };
 		DFB1E8B22B1506350076008E /* ListCoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8B12B1506350076008E /* ListCoinsView.swift */; };
 		DFB1E8B42B1506360076008E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1E8B32B1506360076008E /* Assets.xcassets */; };
@@ -57,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DFA20ABB2B1660AB00A66663 /* CoinRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRepository.swift; sourceTree = "<group>"; };
+		DFA20ABD2B1660CD00A66663 /* CacheVersionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheVersionRepository.swift; sourceTree = "<group>"; };
+		DFA20ABF2B16672600A66663 /* ListCoinsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsComposer.swift; sourceTree = "<group>"; };
 		DFB1E8AC2B1506350076008E /* CryptoSphere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoSphere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSphereApp.swift; sourceTree = "<group>"; };
 		DFB1E8B12B1506350076008E /* ListCoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsView.swift; sourceTree = "<group>"; };
@@ -117,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DFA20ABA2B16609000A66663 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DFA20ABB2B1660AB00A66663 /* CoinRepository.swift */,
+				DFA20ABD2B1660CD00A66663 /* CacheVersionRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		DFB1E8A32B1506350076008E = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +201,7 @@
 				DFB1E9112B161DBD0076008E /* UI Components */,
 				DFB1E8B12B1506350076008E /* ListCoinsView.swift */,
 				DFB1E8DC2B150AAB0076008E /* ListCoinsFeature.swift */,
+				DFA20ABF2B16672600A66663 /* ListCoinsComposer.swift */,
 			);
 			path = ListCoins;
 			sourceTree = "<group>";
@@ -348,6 +364,7 @@
 		DFB1E91C2B1640EC0076008E /* CoinCacheManager */ = {
 			isa = PBXGroup;
 			children = (
+				DFA20ABA2B16609000A66663 /* Repositories */,
 				DFB1E91D2B16410E0076008E /* CoinCacheManager.swift */,
 				DFB1E9262B1655CC0076008E /* CoredataPersistanceManager.swift */,
 				DFB1E9212B16499D0076008E /* CoinCache.xcdatamodeld */,
@@ -506,10 +523,13 @@
 				DFB1E8DD2B150AAB0076008E /* ListCoinsFeature.swift in Sources */,
 				DFB1E9152B162A550076008E /* CoinGeckoEndpoint.swift in Sources */,
 				DFB1E91B2B163E430076008E /* CoinCache.swift in Sources */,
+				DFA20ABE2B1660CD00A66663 /* CacheVersionRepository.swift in Sources */,
 				DFB1E8F12B1522C20076008E /* HTTPClientProtocol.swift in Sources */,
 				DFB1E8FD2B15276D0076008E /* CoinLoader.swift in Sources */,
+				DFA20ABC2B1660AB00A66663 /* CoinRepository.swift in Sources */,
 				DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */,
 				DFB1E9092B1562630076008E /* Image+.swift in Sources */,
+				DFA20AC02B16672600A66663 /* ListCoinsComposer.swift in Sources */,
 				DFB1E9002B152AD90076008E /* Coin.swift in Sources */,
 				DFB1E8F32B1522FB0076008E /* EndpointProtocol.swift in Sources */,
 				DFB1E9102B1619CD0076008E /* FontColors.swift in Sources */,

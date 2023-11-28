@@ -74,14 +74,5 @@ struct CoinCard: View {
 }
 
 #Preview {
-    ListCoinsView(
-        store: .init( initialState: ListCoinsFeature.State()) {
-            ListCoinsFeature(
-                coinLoader:
-                    RemoteCoinLoaderService(
-                        httpClient: URLSessionHTTPClient(session: URLSession.shared)
-                    ), cacheManager: CoinCacheManager()
-            )
-        }
-    )
+    ListCoinsComposer.make()
 }

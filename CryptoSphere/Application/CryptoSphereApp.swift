@@ -9,20 +9,12 @@ import SwiftUI
 
 @main
 struct CryptoSphereApp: App {
+    let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
-            ListCoinsView(
-                store: .init( initialState: ListCoinsFeature.State()) {
-                    ListCoinsFeature(
-                        coinLoader:
-                            RemoteCoinLoaderService(
-                                httpClient: URLSessionHTTPClient(session: URLSession.shared)
-                            ), cacheManager: CoinCacheManager()
-                    )
-                }
-            )
+            ListCoinsComposer.make()
         }
-        .modelContainer(for: [CachedCoin.self])
-        .modelContainer(for: LastCachedCoinDate.self)
+        .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
 }
