@@ -17,10 +17,12 @@ struct CryptoSphereApp: App {
                         coinLoader:
                             RemoteCoinLoaderService(
                                 httpClient: URLSessionHTTPClient(session: URLSession.shared)
-                            )
+                            ), cacheManager: CoinCacheManager()
                     )
                 }
             )
         }
+        .modelContainer(for: [CachedCoin.self])
+        .modelContainer(for: LastCachedCoinDate.self)
     }
 }

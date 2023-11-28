@@ -1,24 +1,6 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct CoinCard: View {
-    let coin: DisplayedCoin
-    @State var image = Image.defaultCoinImage
-
-    init(for coin: DisplayedCoin) {
-        self.coin = coin
-    }
-
-    var body: some View {
-        HStack {
-            image
-        }
-        .task {
-            await image.download(from: coin.imageUrl)
-        }
-    }
-}
-
 struct ListCoinsView: View {
     let store: StoreOf<ListCoinsFeature>
 
@@ -28,10 +10,12 @@ struct ListCoinsView: View {
                 List(viewStore.coins) { coin in
                     CoinCard(for: coin)
                         .listRowSeparator(.hidden)
+                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
                 .navigationTitle("Coins")
+                .navigationBarTitleDisplayMode(.inline)
                 .listStyle(.plain)
-                .background(DS.backgrounds.secondary)
+                .background(DS.backgrounds.primary)
             }
             .onAppear {
                 viewStore.send(.onAppear)
@@ -47,7 +31,7 @@ struct ListCoinsView: View {
                 coinLoader:
                     RemoteCoinLoaderService(
                         httpClient: URLSessionHTTPClient(session: URLSession.shared)
-                    )
+                    ), cacheManager: CoinCacheManager()
             )
         }
     )

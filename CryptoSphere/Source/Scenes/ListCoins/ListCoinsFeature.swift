@@ -5,12 +5,13 @@ struct DisplayedCoin: Equatable, Identifiable {
     let name: String
     let marketRank: Int
     let imageUrl: String
-    let bitcoinPrice: Double
+    let dollarPrice: String
 }
 
 @Reducer
 struct ListCoinsFeature {
     let coinLoader: CoinLoader
+    let cacheManager: CoinCacheRepository
 
     struct State: Equatable {
         var coins = [DisplayedCoin]()
@@ -53,9 +54,17 @@ private extension ListCoinsFeature {
     }
 
     func fetchCoins() async throws -> [DisplayedCoin] {
-        let businessCoins = try await coinLoader.fetchCoinList()
-        let coins = businessCoins.map { CoinMapper.toDisplayed(from: $0) }
+        do {
+            let businessCoins = try await coinLoader.fetchCoinList()
+            let exchange = try await coinLoader.getDollarExchangeRate()
+            let coins = businessCoins.map { CoinMapper.toDisplayed(from: $0, exchange: exchange) }
+            try cacheManager.saveInCacheIfNeeded(coins)
 
-        return coins
+            return coins
+        } catch is APICallError {
+            let cachedCoins = try cacheManager.tryFetchFromCatch()
+
+            return cachedCoins
+        }
     }
 }

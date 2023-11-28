@@ -20,5 +20,5 @@ struct RemoteCoinResultItem: Decodable {
     let name: String
     let marketCapRank: Int
     let large: String
-    let priceBtc: Double
+    let priceBtc: Decimal
 }

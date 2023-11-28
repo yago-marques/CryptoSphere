@@ -12,5 +12,5 @@ struct Coin {
     let name: String
     let marketRank: Int
     let imageUrl: String
-    let bitcoinPrice: Double
+    let bitcoinPrice: Decimal
 }

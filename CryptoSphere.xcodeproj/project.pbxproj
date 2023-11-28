@@ -20,7 +20,6 @@
 		DFB1E8F12B1522C20076008E /* HTTPClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8F02B1522C20076008E /* HTTPClientProtocol.swift */; };
 		DFB1E8F32B1522FB0076008E /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8F22B1522FB0076008E /* EndpointProtocol.swift */; };
 		DFB1E8F92B15244F0076008E /* RemoteCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8F82B15244F0076008E /* RemoteCoin.swift */; };
-		DFB1E8FB2B1524CA0076008E /* CoinListEndEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8FA2B1524CA0076008E /* CoinListEndEndpoint.swift */; };
 		DFB1E8FD2B15276D0076008E /* CoinLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8FC2B15276D0076008E /* CoinLoader.swift */; };
 		DFB1E9002B152AD90076008E /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8FF2B152AD90076008E /* Coin.swift */; };
 		DFB1E9032B152C6F0076008E /* RemoteCoinLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9022B152C6F0076008E /* RemoteCoinLoaderService.swift */; };
@@ -29,6 +28,13 @@
 		DFB1E90C2B16197C0076008E /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E90B2B16197C0076008E /* DesignSystem.swift */; };
 		DFB1E90E2B1619B40076008E /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E90D2B1619B40076008E /* Backgrounds.swift */; };
 		DFB1E9102B1619CD0076008E /* FontColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E90F2B1619CD0076008E /* FontColors.swift */; };
+		DFB1E9132B161DE80076008E /* CoinCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9122B161DE80076008E /* CoinCard.swift */; };
+		DFB1E9152B162A550076008E /* CoinGeckoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9142B162A550076008E /* CoinGeckoEndpoint.swift */; };
+		DFB1E9172B162DBD0076008E /* RemoteDollarExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9162B162DBD0076008E /* RemoteDollarExchange.swift */; };
+		DFB1E9192B1635220076008E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9182B1635220076008E /* String+.swift */; };
+		DFB1E91B2B163E430076008E /* CoinCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E91A2B163E430076008E /* CoinCacheRepository.swift */; };
+		DFB1E91E2B16410E0076008E /* CoinCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E91D2B16410E0076008E /* CoinCacheManager.swift */; };
+		DFB1E9232B16499D0076008E /* CoinCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9212B16499D0076008E /* CoinCache.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +70,6 @@
 		DFB1E8F02B1522C20076008E /* HTTPClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientProtocol.swift; sourceTree = "<group>"; };
 		DFB1E8F22B1522FB0076008E /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
 		DFB1E8F82B15244F0076008E /* RemoteCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCoin.swift; sourceTree = "<group>"; };
-		DFB1E8FA2B1524CA0076008E /* CoinListEndEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListEndEndpoint.swift; sourceTree = "<group>"; };
 		DFB1E8FC2B15276D0076008E /* CoinLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLoader.swift; sourceTree = "<group>"; };
 		DFB1E8FF2B152AD90076008E /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		DFB1E9022B152C6F0076008E /* RemoteCoinLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCoinLoaderService.swift; sourceTree = "<group>"; };
@@ -73,6 +78,13 @@
 		DFB1E90B2B16197C0076008E /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		DFB1E90D2B1619B40076008E /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
 		DFB1E90F2B1619CD0076008E /* FontColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontColors.swift; sourceTree = "<group>"; };
+		DFB1E9122B161DE80076008E /* CoinCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCard.swift; sourceTree = "<group>"; };
+		DFB1E9142B162A550076008E /* CoinGeckoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoEndpoint.swift; sourceTree = "<group>"; };
+		DFB1E9162B162DBD0076008E /* RemoteDollarExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDollarExchange.swift; sourceTree = "<group>"; };
+		DFB1E9182B1635220076008E /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		DFB1E91A2B163E430076008E /* CoinCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCacheRepository.swift; sourceTree = "<group>"; };
+		DFB1E91D2B16410E0076008E /* CoinCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCacheManager.swift; sourceTree = "<group>"; };
+		DFB1E9222B16499D0076008E /* CoinCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinCache.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +179,7 @@
 		DFB1E8E32B151BA00076008E /* ListCoins */ = {
 			isa = PBXGroup;
 			children = (
+				DFB1E9112B161DBD0076008E /* UI Components */,
 				DFB1E8B12B1506350076008E /* ListCoinsView.swift */,
 				DFB1E8DC2B150AAB0076008E /* ListCoinsFeature.swift */,
 			);
@@ -176,6 +189,7 @@
 		DFB1E8E42B1521240076008E /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				DFB1E91C2B1640EC0076008E /* CoinCacheManager */,
 				DFB1E8E92B1522040076008E /* HTTPClient */,
 				DFB1E9012B152C4B0076008E /* RemoteCoinLoader */,
 			);
@@ -225,7 +239,7 @@
 		DFB1E8EA2B1522110076008E /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				DFB1E8FA2B1524CA0076008E /* CoinListEndEndpoint.swift */,
+				DFB1E9142B162A550076008E /* CoinGeckoEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -253,6 +267,7 @@
 			children = (
 				DFB1E8FE2B152AC40076008E /* BusinessModels */,
 				DFB1E8FC2B15276D0076008E /* CoinLoader.swift */,
+				DFB1E91A2B163E430076008E /* CoinCacheRepository.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -261,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB1E8F82B15244F0076008E /* RemoteCoin.swift */,
+				DFB1E9162B162DBD0076008E /* RemoteDollarExchange.swift */,
 			);
 			path = RemoteModels;
 			sourceTree = "<group>";
@@ -301,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB1E9082B1562630076008E /* Image+.swift */,
+				DFB1E9182B1635220076008E /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,6 +330,23 @@
 				DFB1E90F2B1619CD0076008E /* FontColors.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		DFB1E9112B161DBD0076008E /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				DFB1E9122B161DE80076008E /* CoinCard.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		DFB1E91C2B1640EC0076008E /* CoinCacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				DFB1E91D2B16410E0076008E /* CoinCacheManager.swift */,
+				DFB1E9212B16499D0076008E /* CoinCache.xcdatamodeld */,
+			);
+			path = CoinCacheManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,15 +484,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB1E9132B161DE80076008E /* CoinCard.swift in Sources */,
 				DFB1E8F92B15244F0076008E /* RemoteCoin.swift in Sources */,
+				DFB1E9192B1635220076008E /* String+.swift in Sources */,
 				DFB1E8B22B1506350076008E /* ListCoinsView.swift in Sources */,
-				DFB1E8FB2B1524CA0076008E /* CoinListEndEndpoint.swift in Sources */,
 				DFB1E8EE2B1522480076008E /* URLSessionHTTPClient.swift in Sources */,
 				DFB1E8EC2B1522350076008E /* APICallError.swift in Sources */,
+				DFB1E9172B162DBD0076008E /* RemoteDollarExchange.swift in Sources */,
 				DFB1E9032B152C6F0076008E /* RemoteCoinLoaderService.swift in Sources */,
 				DFB1E90C2B16197C0076008E /* DesignSystem.swift in Sources */,
+				DFB1E91E2B16410E0076008E /* CoinCacheManager.swift in Sources */,
 				DFB1E9052B152DEB0076008E /* CoinMapper.swift in Sources */,
 				DFB1E8DD2B150AAB0076008E /* ListCoinsFeature.swift in Sources */,
+				DFB1E9152B162A550076008E /* CoinGeckoEndpoint.swift in Sources */,
+				DFB1E91B2B163E430076008E /* CoinCacheRepository.swift in Sources */,
 				DFB1E8F12B1522C20076008E /* HTTPClientProtocol.swift in Sources */,
 				DFB1E8FD2B15276D0076008E /* CoinLoader.swift in Sources */,
 				DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */,
@@ -466,6 +505,7 @@
 				DFB1E9002B152AD90076008E /* Coin.swift in Sources */,
 				DFB1E8F32B1522FB0076008E /* EndpointProtocol.swift in Sources */,
 				DFB1E9102B1619CD0076008E /* FontColors.swift in Sources */,
+				DFB1E9232B16499D0076008E /* CoinCache.xcdatamodeld in Sources */,
 				DFB1E90E2B1619B40076008E /* Backgrounds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,6 +678,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -667,6 +708,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -815,6 +857,19 @@
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DFB1E9212B16499D0076008E /* CoinCache.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFB1E9222B16499D0076008E /* CoinCache.xcdatamodel */,
+			);
+			currentVersion = DFB1E9222B16499D0076008E /* CoinCache.xcdatamodel */;
+			path = CoinCache.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DFB1E8A42B1506350076008E /* Project object */;
 }

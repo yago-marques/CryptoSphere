@@ -9,4 +9,5 @@ import Foundation
 
 protocol CoinLoader {
     func fetchCoinList() async throws -> [Coin]
+    func getDollarExchangeRate() async throws -> Decimal
 }
