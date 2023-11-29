@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CoinCard: View {
     let coin: DisplayedCoin
-    @State var image = Image.defaultCoinImage
 
     init(for coin: DisplayedCoin) {
         self.coin = coin
@@ -31,13 +30,10 @@ struct CoinCard: View {
         .padding([.top, .bottom], 10)
         .frame(width: UIScreen.main.bounds.width)
         .background(DS.backgrounds.secondary)
-        .task {
-            await image.download(from: coin.imageUrl)
-        }
     }
 
     var coinImage: some View {
-        image
+        Image(uiImage: .init(data: coin.image) ?? .init(named: "defaultCoin")!)
             .resizable()
             .clipShape(Circle())
             .background {

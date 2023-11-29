@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 struct CoinMapper {
     let decoder: JSONDecoder
@@ -42,11 +43,20 @@ struct CoinMapper {
     }
 
     static func toDisplayed(from business: Coin, exchange: Decimal) -> DisplayedCoin {
-        .init(
+        var imageData = Data()
+        if let url = URL(string: business.imageUrl) {
+            do {
+                imageData = try Data(contentsOf: url)
+            } catch {
+                imageData = UIImage(named: "defaultCoin")!.pngData()!
+            }
+        }
+
+        return .init(
             id: business.id,
             name: business.name,
             marketRank: business.marketRank,
-            imageUrl: business.imageUrl,
+            image: imageData,
             dollarPrice: NSDecimalNumber(
                 decimal: business.bitcoinPrice * exchange
             ).stringValue
@@ -58,7 +68,7 @@ struct CoinMapper {
             id: local.id ?? "",
             name: local.name ?? "",
             marketRank: Int(local.marketRank),
-            imageUrl: local.imageUrl ?? "",
+            image: local.image ?? Data(),
             dollarPrice: local.dollarPrice ?? ""
         )
     }
@@ -67,7 +77,7 @@ struct CoinMapper {
         let entity = CoinEntity(context: context)
         entity.id = displayed.id
         entity.name = displayed.name
-        entity.imageUrl = displayed.imageUrl
+        entity.image = displayed.image
         entity.dollarPrice = displayed.dollarPrice
         entity.marketRank = Int64(displayed.marketRank)
 

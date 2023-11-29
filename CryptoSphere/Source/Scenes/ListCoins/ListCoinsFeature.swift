@@ -1,13 +1,5 @@
 import ComposableArchitecture
 
-struct DisplayedCoin: Equatable, Identifiable {
-    let id: String
-    let name: String
-    let marketRank: Int
-    let imageUrl: String
-    let dollarPrice: String
-}
-
 @Reducer
 struct ListCoinsFeature {
     let coinLoader: CoinLoader
@@ -37,7 +29,7 @@ struct ListCoinsFeature {
                 state.loading = true
                 if state.coins.isEmpty {
                     return .run { send in
-                        try await fetchCoins(send)
+                        await fetchCoins(send)
                     }
                 } else {
                     return .none
@@ -72,7 +64,7 @@ struct ListCoinsFeature {
 }
 
 private extension ListCoinsFeature {
-    func fetchCoins(_ send: Send<ListCoinsFeature.Action>) async throws {
+    func fetchCoins(_ send: Send<ListCoinsFeature.Action>) async {
         do {
             let businessCoins = try await coinLoader.fetchCoinList()
 
@@ -83,14 +75,14 @@ private extension ListCoinsFeature {
 
 
             await send(.onAppearResponse(coins: coins))
-        } catch is APICallError {
+        } catch {
             do {
                 let cachedCoins = try cacheManager.tryFetchFromCache()
                 let cacheMessage = try cacheManager.lastCacheMessage()
 
                 await send(.setCacheMessage(message: cacheMessage))
                 await send(.apiFailureAndCacheAvailable(cachedCoins: cachedCoins))
-            } catch is CacheError {
+            } catch {
                 await send(.apiAndCacheFailure)
             }
         }

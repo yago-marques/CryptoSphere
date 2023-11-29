@@ -15,9 +15,8 @@
 		DFA20ACF2B16C8CD00A66663 /* WalletFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ACE2B16C8CD00A66663 /* WalletFeature.swift */; };
 		DFA20AD22B16CA1200A66663 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AD12B16CA1200A66663 /* WalletView.swift */; };
 		DFA20AD42B16CAFF00A66663 /* WalletComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AD32B16CAFF00A66663 /* WalletComposer.swift */; };
-		DFA20AD72B16CC0A00A66663 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AD62B16CC0A00A66663 /* RootFeature.swift */; };
 		DFA20AD92B16CE5000A66663 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AD82B16CE5000A66663 /* RootView.swift */; };
-		DFA20ADB2B16D00C00A66663 /* RootComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ADA2B16D00C00A66663 /* RootComposer.swift */; };
+		DFA20ADE2B17619F00A66663 /* DisplayedCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ADD2B17619F00A66663 /* DisplayedCoin.swift */; };
 		DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */; };
 		DFB1E8B22B1506350076008E /* ListCoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8B12B1506350076008E /* ListCoinsView.swift */; };
 		DFB1E8B42B1506360076008E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1E8B32B1506360076008E /* Assets.xcassets */; };
@@ -76,9 +75,8 @@
 		DFA20ACE2B16C8CD00A66663 /* WalletFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletFeature.swift; sourceTree = "<group>"; };
 		DFA20AD12B16CA1200A66663 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		DFA20AD32B16CAFF00A66663 /* WalletComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletComposer.swift; sourceTree = "<group>"; };
-		DFA20AD62B16CC0A00A66663 /* RootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
 		DFA20AD82B16CE5000A66663 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		DFA20ADA2B16D00C00A66663 /* RootComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComposer.swift; sourceTree = "<group>"; };
+		DFA20ADD2B17619F00A66663 /* DisplayedCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedCoin.swift; sourceTree = "<group>"; };
 		DFB1E8AC2B1506350076008E /* CryptoSphere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoSphere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSphereApp.swift; sourceTree = "<group>"; };
 		DFB1E8B12B1506350076008E /* ListCoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsView.swift; sourceTree = "<group>"; };
@@ -170,11 +168,17 @@
 		DFA20AD52B16CBD100A66663 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				DFA20AD62B16CC0A00A66663 /* RootFeature.swift */,
 				DFA20AD82B16CE5000A66663 /* RootView.swift */,
-				DFA20ADA2B16D00C00A66663 /* RootComposer.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		DFA20ADC2B17618900A66663 /* DisplayedModels */ = {
+			isa = PBXGroup;
+			children = (
+				DFA20ADD2B17619F00A66663 /* DisplayedCoin.swift */,
+			);
+			path = DisplayedModels;
 			sourceTree = "<group>";
 		};
 		DFB1E8A32B1506350076008E = {
@@ -235,6 +239,7 @@
 		DFB1E8E22B151B970076008E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DFA20ADC2B17618900A66663 /* DisplayedModels */,
 				DFA20AD52B16CBD100A66663 /* Root */,
 				DFA20ACD2B16C8AC00A66663 /* Wallet */,
 				DFB1E8E32B151BA00076008E /* ListCoins */,
@@ -548,9 +553,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFB1E9132B161DE80076008E /* CoinCard.swift in Sources */,
-				DFA20ADB2B16D00C00A66663 /* RootComposer.swift in Sources */,
 				DFB1E8F92B15244F0076008E /* RemoteCoin.swift in Sources */,
-				DFA20AD72B16CC0A00A66663 /* RootFeature.swift in Sources */,
+				DFA20ADE2B17619F00A66663 /* DisplayedCoin.swift in Sources */,
 				DFB1E9192B1635220076008E /* String+.swift in Sources */,
 				DFA20AD92B16CE5000A66663 /* RootView.swift in Sources */,
 				DFB1E8B22B1506350076008E /* ListCoinsView.swift in Sources */,

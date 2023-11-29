@@ -6,13 +6,16 @@ struct RootView: View {
         TabView() {
             ListCoinsComposer.make()
                 .tabItem {
-                    Text("list")
+                    Image(systemName: "bitcoinsign.circle.fill")
+                    Text("Coins")
                 }
 
             WalletComposer.make()
                 .tabItem {
-                    Text("list")
+                    Image(systemName: "mail.stack.fill")
+                    Text("Carteira")
                 }
+
         }
     }
 }
