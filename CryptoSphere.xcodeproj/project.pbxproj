@@ -189,6 +189,16 @@
 			path = DisplayedModels;
 			sourceTree = "<group>";
 		};
+		DFA20AE52B17B22500A66663 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DFB1E90D2B1619B40076008E /* Backgrounds.swift */,
+				DFB1E90F2B1619CD0076008E /* FontColors.swift */,
+				DFA20AC82B16A42300A66663 /* Components.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		DFB1E8A32B1506350076008E = {
 			isa = PBXGroup;
 			children = (
@@ -406,11 +416,9 @@
 		DFB1E90A2B1619470076008E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				DFA20AE52B17B22500A66663 /* Categories */,
 				DFA20AC32B16A36400A66663 /* UI Components */,
 				DFB1E90B2B16197C0076008E /* DesignSystem.swift */,
-				DFB1E90D2B1619B40076008E /* Backgrounds.swift */,
-				DFB1E90F2B1619CD0076008E /* FontColors.swift */,
-				DFA20AC82B16A42300A66663 /* Components.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
