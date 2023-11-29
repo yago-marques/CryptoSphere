@@ -6,10 +6,13 @@ import Foundation
 struct WalletFeature {
     struct State: Equatable {
         var wallets = [DisplayedWallet]()
+        var shouldPresentCoinPicker = false
     }
 
     enum Action: Equatable {
         case onAppear
+        case openCoinPicker
+        case closePicker
     }
 
     var body: some Reducer<State, Action> {
@@ -17,6 +20,14 @@ struct WalletFeature {
             switch action {
             case .onAppear:
                 state.wallets = [.init(id: "oi", name: "My Wallet", image: Image.defaultCoinImageData, coins: []), .init(id: "oi", name: "My Wallet", image: Image.defaultCoinImageData, coins: [])]
+                return .none
+
+            case .openCoinPicker:
+                state.shouldPresentCoinPicker = true
+                return .none
+
+            case .closePicker:
+                state.shouldPresentCoinPicker = false
                 return .none
             }
         }

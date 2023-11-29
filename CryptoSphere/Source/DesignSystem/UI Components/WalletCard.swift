@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WalletCard: View {
     let wallet: DisplayedWallet
+    let handler: () -> Void
 
     var body: some View {
         HStack {
@@ -28,16 +29,15 @@ struct WalletCard: View {
                 }
                 .padding(.leading, 5)
                 Spacer()
-                Button {
-                    print("oi")
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundStyle(DS.backgrounds.action)
-                        .frame(width: 30)
-                }
-                .padding(.trailing)
+                Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundStyle(DS.backgrounds.action)
+                    .frame(width: 30)
+                    .padding(.trailing)
+                    .onTapGesture {
+                        handler()
+                    }
 
             }
             .frame(width: UIScreen.main.bounds.width * 0.9)

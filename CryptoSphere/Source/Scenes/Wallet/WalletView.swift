@@ -8,7 +8,9 @@ struct WalletView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
                 List(viewStore.wallets) { wallet in
-                    DS.components.walletCard(for: wallet)
+                    DS.components.walletCard(for: wallet) {
+                        viewStore.send(.openCoinPicker)
+                    }
                         .listRowSeparator(.hidden)
                         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
@@ -19,13 +21,24 @@ struct WalletView: View {
                 .toolbar {
                     ToolbarItem {
                         Button{
-                            print("create wallet")
+                            print("oi")
                         } label: {
                             Text("Create new")
                         }
                         .foregroundStyle(DS.backgrounds.action)
                     }
                 }
+            }
+            .sheet(
+                isPresented: viewStore.binding(
+                    get: { $0.shouldPresentCoinPicker },
+                    send: .openCoinPicker
+                ),
+                onDismiss: {
+                    viewStore.send(.closePicker)
+                }
+            ) {
+                DS.components.coinPicker()
             }
             .onAppear {
                 viewStore.send(.onAppear)

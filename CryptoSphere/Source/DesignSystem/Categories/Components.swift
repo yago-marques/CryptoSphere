@@ -16,7 +16,14 @@ struct Components {
         CoinCard(for: coin)
     }
 
-    static func walletCard(for wallet: DisplayedWallet) -> some View {
-        WalletCard(wallet: wallet)
+    static func walletCard(
+        for wallet: DisplayedWallet,
+        handler: @escaping () -> Void
+    ) -> some View {
+        WalletCard(wallet: wallet, handler: handler)
+    }
+
+    static func coinPicker() -> some View {
+        CoinPickerComposer.make()
     }
 }

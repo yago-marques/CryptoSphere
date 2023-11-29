@@ -20,6 +20,8 @@
 		DFA20AE02B176FE700A66663 /* ListCoinsFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ADF2B176FE700A66663 /* ListCoinsFallback.swift */; };
 		DFA20AE22B1777E000A66663 /* DisplayedWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AE12B1777E000A66663 /* DisplayedWallet.swift */; };
 		DFA20AE42B17B0BF00A66663 /* WalletCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AE32B17B0BF00A66663 /* WalletCard.swift */; };
+		DFA20AE72B17B47400A66663 /* CoinPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AE62B17B47400A66663 /* CoinPicker.swift */; };
+		DFA20AEA2B17B6B900A66663 /* CoinPickerComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AE92B17B6B900A66663 /* CoinPickerComposer.swift */; };
 		DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */; };
 		DFB1E8B22B1506350076008E /* ListCoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8B12B1506350076008E /* ListCoinsView.swift */; };
 		DFB1E8B42B1506360076008E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1E8B32B1506360076008E /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		DFA20ADF2B176FE700A66663 /* ListCoinsFallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsFallback.swift; sourceTree = "<group>"; };
 		DFA20AE12B1777E000A66663 /* DisplayedWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedWallet.swift; sourceTree = "<group>"; };
 		DFA20AE32B17B0BF00A66663 /* WalletCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCard.swift; sourceTree = "<group>"; };
+		DFA20AE62B17B47400A66663 /* CoinPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPicker.swift; sourceTree = "<group>"; };
+		DFA20AE92B17B6B900A66663 /* CoinPickerComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPickerComposer.swift; sourceTree = "<group>"; };
 		DFB1E8AC2B1506350076008E /* CryptoSphere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoSphere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSphereApp.swift; sourceTree = "<group>"; };
 		DFB1E8B12B1506350076008E /* ListCoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsView.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		DFA20AC32B16A36400A66663 /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
+				DFA20AE82B17B55F00A66663 /* CoinPicker */,
 				DFA20AC42B16A37D00A66663 /* InternetErrorView.swift */,
 				DFB1E9122B161DE80076008E /* CoinCard.swift */,
 				DFA20AE32B17B0BF00A66663 /* WalletCard.swift */,
@@ -197,6 +202,15 @@
 				DFA20AC82B16A42300A66663 /* Components.swift */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		DFA20AE82B17B55F00A66663 /* CoinPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DFA20AE62B17B47400A66663 /* CoinPicker.swift */,
+				DFA20AE92B17B6B900A66663 /* CoinPickerComposer.swift */,
+			);
+			path = CoinPicker;
 			sourceTree = "<group>";
 		};
 		DFB1E8A32B1506350076008E = {
@@ -587,6 +601,7 @@
 				DFB1E90C2B16197C0076008E /* DesignSystem.swift in Sources */,
 				DFB1E9252B1655020076008E /* Persistence.swift in Sources */,
 				DFB1E91E2B16410E0076008E /* CoinCacheManager.swift in Sources */,
+				DFA20AEA2B17B6B900A66663 /* CoinPickerComposer.swift in Sources */,
 				DFB1E9052B152DEB0076008E /* CoinMapper.swift in Sources */,
 				DFB1E8DD2B150AAB0076008E /* ListCoinsFeature.swift in Sources */,
 				DFA20AD22B16CA1200A66663 /* WalletView.swift in Sources */,
@@ -598,6 +613,7 @@
 				DFB1E8FD2B15276D0076008E /* CoinLoader.swift in Sources */,
 				DFA20ACF2B16C8CD00A66663 /* WalletFeature.swift in Sources */,
 				DFA20ABC2B1660AB00A66663 /* CoinRepository.swift in Sources */,
+				DFA20AE72B17B47400A66663 /* CoinPicker.swift in Sources */,
 				DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */,
 				DFB1E9092B1562630076008E /* Image+.swift in Sources */,
 				DFA20AC02B16672600A66663 /* ListCoinsComposer.swift in Sources */,
