@@ -54,9 +54,9 @@ extension CoredataPersistanceManager: CoinRepository {
         let coredataEntities = try context.fetch(fetchRequest)
         for entity in coredataEntities {
             context.delete(entity)
-        }
 
-        try context.save()
+            try context.save()
+        }
     }
 }
 

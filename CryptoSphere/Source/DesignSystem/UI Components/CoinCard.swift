@@ -72,7 +72,3 @@ struct CoinCard: View {
         }
     }
 }
-
-#Preview {
-    ListCoinsComposer.make()
-}

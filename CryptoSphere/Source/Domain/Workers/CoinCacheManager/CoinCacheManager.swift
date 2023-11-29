@@ -11,14 +11,14 @@ struct CacheError: Error { }
 
 struct CoinCacheManager: CoinCache {
     let coinRepository: CoinRepository
-    let cacheVersionrepository: CacheVersionRepository
+    let cacheVersionRepository: CacheVersionRepository
 
     func saveInCacheIfNeeded(_ coins: [DisplayedCoin]) throws {
-        if let lastCacheDate = try cacheVersionrepository.getLastDate() {
+        if let lastCacheDate = try cacheVersionRepository.getLastDate() {
             try updateCacheIfNeeded(for: lastCacheDate, coins)
         } else {
             try coinRepository.saveCoins(coins)
-            try cacheVersionrepository.registerUpdate()
+            try cacheVersionRepository.registerUpdate()
         }
     }
 
@@ -31,7 +31,7 @@ struct CoinCacheManager: CoinCache {
     }
 
     func lastCacheMessage() throws -> String {
-        guard let lastDate = try cacheVersionrepository.getLastDate() else { return "invalid cache" }
+        guard let lastDate = try cacheVersionRepository.getLastDate() else { return "invalid cache" }
         
         let calendar = Calendar.current
 
@@ -46,6 +46,7 @@ struct CoinCacheManager: CoinCache {
     private func updateCacheIfNeeded(for lastDate: Date, _ coins: [DisplayedCoin]) throws {
         if canResetCache(for: lastDate) {
             try coinRepository.replaceCoins(for: coins)
+            try cacheVersionRepository.registerUpdate()
         }
     }
 

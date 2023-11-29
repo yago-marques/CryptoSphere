@@ -22,7 +22,7 @@ struct ListCoinsFeature {
         var internetErrorMessage = ""
     }
 
-    enum Action {
+    enum Action: Equatable {
         case onAppear
         case onAppearResponse(coins: [DisplayedCoin])
         case apiFailureAndCacheAvailable(cachedCoins: [DisplayedCoin])
@@ -35,8 +35,12 @@ struct ListCoinsFeature {
             switch action {
             case .onAppear:
                 state.loading = true
-                return .run { send in
-                    try await fetchCoins(send)
+                if state.coins.isEmpty {
+                    return .run { send in
+                        try await fetchCoins(send)
+                    }
+                } else {
+                    return .none
                 }
 
             case .onAppearResponse(let coins):
@@ -71,9 +75,12 @@ private extension ListCoinsFeature {
     func fetchCoins(_ send: Send<ListCoinsFeature.Action>) async throws {
         do {
             let businessCoins = try await coinLoader.fetchCoinList()
+
             let exchange = try await coinLoader.getDollarExchangeRate()
+
             let coins = businessCoins.map { CoinMapper.toDisplayed(from: $0, exchange: exchange) }
             try cacheManager.saveInCacheIfNeeded(coins)
+
 
             await send(.onAppearResponse(coins: coins))
         } catch is APICallError {
@@ -88,6 +95,4 @@ private extension ListCoinsFeature {
             }
         }
     }
-
-
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct CryptoSphereApp: App {
@@ -13,7 +14,7 @@ struct CryptoSphereApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ListCoinsComposer.make()
+            RootView()
         }
         .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }

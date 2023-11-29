@@ -14,7 +14,7 @@ enum ListCoinsComposer {
         let coinLoader = RemoteCoinLoaderService(httpClient: httpClient)
         let cacheManager = CoinCacheManager(
             coinRepository: CoredataPersistanceManager(),
-            cacheVersionrepository: CoredataPersistanceManager()
+            cacheVersionRepository: CoredataPersistanceManager()
         )
 
         let store = Store(initialState: ListCoinsFeature.State()) {
