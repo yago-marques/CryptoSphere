@@ -1,10 +1,3 @@
-//
-//  CoinMapper.swift
-//  CryptoSphere
-//
-//  Created by Yago Marques on 27/11/23.
-//
-
 import Foundation
 import CoreData
 import UIKit

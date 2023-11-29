@@ -17,6 +17,7 @@
 		DFA20AD42B16CAFF00A66663 /* WalletComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AD32B16CAFF00A66663 /* WalletComposer.swift */; };
 		DFA20AD92B16CE5000A66663 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20AD82B16CE5000A66663 /* RootView.swift */; };
 		DFA20ADE2B17619F00A66663 /* DisplayedCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ADD2B17619F00A66663 /* DisplayedCoin.swift */; };
+		DFA20AE02B176FE700A66663 /* ListCoinsFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA20ADF2B176FE700A66663 /* ListCoinsFallback.swift */; };
 		DFB1E8B02B1506350076008E /* CryptoSphereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */; };
 		DFB1E8B22B1506350076008E /* ListCoinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E8B12B1506350076008E /* ListCoinsView.swift */; };
 		DFB1E8B42B1506360076008E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB1E8B32B1506360076008E /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		DFA20AD32B16CAFF00A66663 /* WalletComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletComposer.swift; sourceTree = "<group>"; };
 		DFA20AD82B16CE5000A66663 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		DFA20ADD2B17619F00A66663 /* DisplayedCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedCoin.swift; sourceTree = "<group>"; };
+		DFA20ADF2B176FE700A66663 /* ListCoinsFallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsFallback.swift; sourceTree = "<group>"; };
 		DFB1E8AC2B1506350076008E /* CryptoSphere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoSphere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1E8AF2B1506350076008E /* CryptoSphereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSphereApp.swift; sourceTree = "<group>"; };
 		DFB1E8B12B1506350076008E /* ListCoinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				DFB1E8B12B1506350076008E /* ListCoinsView.swift */,
 				DFB1E8DC2B150AAB0076008E /* ListCoinsFeature.swift */,
 				DFA20ABF2B16672600A66663 /* ListCoinsComposer.swift */,
+				DFA20ADF2B176FE700A66663 /* ListCoinsFallback.swift */,
 			);
 			path = ListCoins;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				DFB1E8EC2B1522350076008E /* APICallError.swift in Sources */,
 				DFB1E9172B162DBD0076008E /* RemoteDollarExchange.swift in Sources */,
 				DFA20AC92B16A42300A66663 /* Components.swift in Sources */,
+				DFA20AE02B176FE700A66663 /* ListCoinsFallback.swift in Sources */,
 				DFB1E9032B152C6F0076008E /* RemoteCoinLoaderService.swift in Sources */,
 				DFB1E9272B1655CC0076008E /* CoredataPersistanceManager.swift in Sources */,
 				DFB1E90C2B16197C0076008E /* DesignSystem.swift in Sources */,

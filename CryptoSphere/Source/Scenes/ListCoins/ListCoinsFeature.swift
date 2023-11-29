@@ -2,8 +2,7 @@ import ComposableArchitecture
 
 @Reducer
 struct ListCoinsFeature {
-    let coinLoader: CoinLoader
-    let cacheManager: CoinCache
+    let fallback: ListCoinsFallbackProtocol
 
     struct State: Equatable {
         var coins = [DisplayedCoin]()
@@ -66,19 +65,12 @@ struct ListCoinsFeature {
 private extension ListCoinsFeature {
     func fetchCoins(_ send: Send<ListCoinsFeature.Action>) async {
         do {
-            let businessCoins = try await coinLoader.fetchCoinList()
-
-            let exchange = try await coinLoader.getDollarExchangeRate()
-
-            let coins = businessCoins.map { CoinMapper.toDisplayed(from: $0, exchange: exchange) }
-            try cacheManager.saveInCacheIfNeeded(coins)
-
+            let coins = try await fallback.primary()
 
             await send(.onAppearResponse(coins: coins))
         } catch {
             do {
-                let cachedCoins = try cacheManager.tryFetchFromCache()
-                let cacheMessage = try cacheManager.lastCacheMessage()
+                let (cachedCoins, cacheMessage) = try fallback.secondary()
 
                 await send(.setCacheMessage(message: cacheMessage))
                 await send(.apiFailureAndCacheAvailable(cachedCoins: cachedCoins))

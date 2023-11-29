@@ -16,12 +16,10 @@ enum ListCoinsComposer {
             coinRepository: CoredataPersistanceManager(),
             cacheVersionRepository: CoredataPersistanceManager()
         )
+        let fallback = ListCoinsFallback(coinLoader: coinLoader, cacheManager: cacheManager)
 
         let store = Store(initialState: ListCoinsFeature.State()) {
-            ListCoinsFeature(
-                coinLoader: coinLoader,
-                cacheManager: cacheManager
-            )
+            ListCoinsFeature(fallback: fallback)
         }
         let view = ListCoinsView(store: store)
 
