@@ -11,4 +11,8 @@ struct Components {
     static func internetErrorView(message: String) -> some View {
         InternetErrorView(message: message)
     }
+
+    static func coinCard(for coin: DisplayedCoin) -> some View {
+        CoinCard(for: coin)
+    }
 }

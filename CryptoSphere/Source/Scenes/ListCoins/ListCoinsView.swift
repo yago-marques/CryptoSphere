@@ -18,7 +18,7 @@ struct ListCoinsView: View {
                     DS.components.internetErrorView(message: viewStore.internetErrorMessage)
                 } else {
                     List(viewStore.coins) { coin in
-                        CoinCard(for: coin)
+                        DS.components.coinCard(for: coin)
                             .listRowSeparator(.hidden)
                             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                     }

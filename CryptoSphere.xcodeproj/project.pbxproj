@@ -140,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				DFA20AC42B16A37D00A66663 /* InternetErrorView.swift */,
+				DFB1E9122B161DE80076008E /* CoinCard.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -210,7 +211,6 @@
 		DFB1E8E32B151BA00076008E /* ListCoins */ = {
 			isa = PBXGroup;
 			children = (
-				DFB1E9112B161DBD0076008E /* UI Components */,
 				DFB1E8B12B1506350076008E /* ListCoinsView.swift */,
 				DFB1E8DC2B150AAB0076008E /* ListCoinsFeature.swift */,
 				DFA20ABF2B16672600A66663 /* ListCoinsComposer.swift */,
@@ -365,14 +365,6 @@
 				DFA20AC82B16A42300A66663 /* Components.swift */,
 			);
 			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		DFB1E9112B161DBD0076008E /* UI Components */ = {
-			isa = PBXGroup;
-			children = (
-				DFB1E9122B161DE80076008E /* CoinCard.swift */,
-			);
-			path = "UI Components";
 			sourceTree = "<group>";
 		};
 		DFB1E91C2B1640EC0076008E /* CoinCacheManager */ = {
