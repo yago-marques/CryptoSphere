@@ -1,10 +1,11 @@
 import ComposableArchitecture
+import SwiftUI
 import Foundation
 
 @Reducer
 struct WalletFeature {
     struct State: Equatable {
-        var initialMessage = ""
+        var wallets = [DisplayedWallet]()
     }
 
     enum Action: Equatable {
@@ -15,7 +16,7 @@ struct WalletFeature {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                state.initialMessage = "Hello World"
+                state.wallets = [.init(id: "oi", name: "My Wallet", image: Image.defaultCoinImageData, coins: []), .init(id: "oi", name: "My Wallet", image: Image.defaultCoinImageData, coins: [])]
                 return .none
             }
         }

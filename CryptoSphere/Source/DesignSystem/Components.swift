@@ -15,4 +15,8 @@ struct Components {
     static func coinCard(for coin: DisplayedCoin) -> some View {
         CoinCard(for: coin)
     }
+
+    static func walletCard(for wallet: DisplayedWallet) -> some View {
+        WalletCard(wallet: wallet)
+    }
 }

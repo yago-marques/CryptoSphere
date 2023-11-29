@@ -25,7 +25,7 @@ struct ListCoinsView: View {
                     .navigationTitle("Trending coins")
                     .navigationBarTitleDisplayMode(.inline)
                     .listStyle(.plain)
-                    .background(DS.backgrounds.primary)
+                    .background(DS.backgrounds.secondary)
                 }
             }
             .onAppear {
@@ -33,4 +33,8 @@ struct ListCoinsView: View {
             }
         }
     }
+}
+
+#Preview {
+    ListCoinsComposer.make()
 }

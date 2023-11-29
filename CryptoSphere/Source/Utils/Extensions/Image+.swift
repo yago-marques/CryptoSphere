@@ -12,6 +12,10 @@ extension Image {
         return Image("defaultCoin")
     }
 
+    static var defaultCoinImageData: Data {
+        return UIImage(named:"defaultCoin")!.pngData()!
+    }
+
     mutating func download(from imagrUrl: String) async {
         guard let url = URL(string: imagrUrl) else { 
             self = Image.defaultCoinImage

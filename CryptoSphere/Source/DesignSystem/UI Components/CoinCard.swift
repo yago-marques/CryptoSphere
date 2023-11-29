@@ -26,6 +26,10 @@ struct CoinCard: View {
             .frame(width: UIScreen.main.bounds.width * 0.9)
             .background(DS.backgrounds.tertiary)
             .clipShape(RoundedRectangle(cornerRadius: 10))
+            .background {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(DS.fontColors.primary)
+            }
         }
         .padding([.top, .bottom], 10)
         .frame(width: UIScreen.main.bounds.width)

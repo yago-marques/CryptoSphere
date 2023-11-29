@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum Backgrounds {
+    static let action = Color("BackgroundAction")
     static let primary = Color("BackgroundPrimary")
     static let secondary = Color("BackgroundSecondary")
     static let tertiary = Color("BackgroundTertiary")
