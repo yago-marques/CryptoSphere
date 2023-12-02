@@ -25,7 +25,7 @@ struct RootView: View {
                     WalletComposer.make()
                         .tabItem {
                             Image(systemName: "mail.stack.fill")
-                            Text("Carteira")
+                            Text("Wallets")
                         }
                 }
             }

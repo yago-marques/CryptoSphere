@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Wallet {
+struct Wallet: Equatable {
     let id: String
     let name: String
     let image: String

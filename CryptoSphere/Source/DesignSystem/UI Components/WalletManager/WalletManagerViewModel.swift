@@ -14,9 +14,14 @@ final class WalletManagerViewModel: ObservableObject {
     var buttonActionLabel: String {
         return mode == .create ? "Create wallet" : "Update wallet"
     }
+    let handler: (Wallet) -> Void
 
-    init(mode: WalletManagerMode) {
+    init(
+        mode: WalletManagerMode,
+        handler: @escaping (Wallet) -> Void
+    ) {
         self.mode = mode
+        self.handler = handler
 
         populateIfNeeded()
     }
@@ -46,6 +51,29 @@ final class WalletManagerViewModel: ObservableObject {
         } else {
             return true
         }
+    }
+
+    func buttonHandler() {
+        let wallet: Wallet
+
+        switch mode {
+        case .editable(let oldWallet):
+            wallet = .init(
+                id: oldWallet.id,
+                name: walletName,
+                image: walletIcon,
+                coins: oldWallet.coins
+            )
+        case .create:
+            wallet = .init(
+                id: UUID().uuidString,
+                name: walletName,
+                image: walletIcon,
+                coins: []
+            )
+        }
+
+        handler(wallet)
     }
 
 }

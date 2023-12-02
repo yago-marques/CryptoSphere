@@ -59,7 +59,10 @@ struct WalletView: View {
                     viewStore.send(.closeWalletmanager)
                 }
             ) {
-                WalletManagerComposer.make(mode: .create)
+                WalletManagerComposer
+                    .make(mode: .create) { wallet in
+                        viewStore.send(.createNewWallet(wallet))
+                }
             }
             .sheet(
                 isPresented: viewStore.binding(
@@ -70,7 +73,14 @@ struct WalletView: View {
                     viewStore.send(.closeWalletmanagerToEdit)
                 }
             ) {
-                WalletManagerComposer.make(mode: .editable(wallet: viewStore.walletToEdit))
+                WalletManagerComposer
+                    .make(
+                        mode: .editable(
+                            wallet: viewStore.walletToEdit
+                        )
+                    ) { wallet in
+                        viewStore.send(.updateWallet(wallet))
+                    }
             }
             .onAppear {
                 viewStore.send(.onAppear)

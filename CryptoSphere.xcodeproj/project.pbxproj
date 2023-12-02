@@ -62,7 +62,6 @@
 		DFB1E9252B1655020076008E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9242B1655020076008E /* Persistence.swift */; };
 		DFB1E9272B1655CC0076008E /* CoredataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1E9262B1655CC0076008E /* CoredataPersistanceManager.swift */; };
 		DFD294112B197D6200DC1D12 /* RegisterToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294102B197D6200DC1D12 /* RegisterToken.swift */; };
-		DFD294142B197E2100DC1D12 /* ReadToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294132B197E2100DC1D12 /* ReadToken.swift */; };
 		DFD294192B19FC9400DC1D12 /* UserPreferencesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294182B19FC9400DC1D12 /* UserPreferencesWorker.swift */; };
 		DFD2941B2B19FE0F00DC1D12 /* RegisterFirstUserAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2941A2B19FE0F00DC1D12 /* RegisterFirstUserAccess.swift */; };
 		DFD2941E2B19FEA400DC1D12 /* VerifyUserFirstAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2941D2B19FEA400DC1D12 /* VerifyUserFirstAccess.swift */; };
@@ -72,10 +71,13 @@
 		DFD294282B1A1B1700DC1D12 /* OnboardingComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294272B1A1B1700DC1D12 /* OnboardingComposer.swift */; };
 		DFD2942A2B1B68F400DC1D12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFD294292B1B68F400DC1D12 /* GoogleService-Info.plist */; };
 		DFD2942D2B1B699A00DC1D12 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DFD2942C2B1B699A00DC1D12 /* FirebaseFirestore */; };
-		DFD2942F2B1B699A00DC1D12 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DFD2942E2B1B699A00DC1D12 /* FirebaseFirestoreSwift */; };
 		DFD294322B1B73B300DC1D12 /* RemoteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294312B1B73B300DC1D12 /* RemoteDatabase.swift */; };
-		DFD294342B1B741C00DC1D12 /* RemoteWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294332B1B741C00DC1D12 /* RemoteWallet.swift */; };
 		DFD294362B1B749800DC1D12 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294352B1B749800DC1D12 /* Wallet.swift */; };
+		DFD294382B1B75E700DC1D12 /* WalletMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294372B1B75E700DC1D12 /* WalletMapper.swift */; };
+		DFD2943A2B1B97BC00DC1D12 /* FetchWallets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294392B1B97BC00DC1D12 /* FetchWallets.swift */; };
+		DFD2943C2B1B97D200DC1D12 /* CreateWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2943B2B1B97D200DC1D12 /* CreateWallet.swift */; };
+		DFD2943E2B1B97DC00DC1D12 /* UpdateWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2943D2B1B97DC00DC1D12 /* UpdateWallet.swift */; };
+		DFD294402B1B97E900DC1D12 /* DeleteWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2943F2B1B97E900DC1D12 /* DeleteWallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,7 +155,6 @@
 		DFB1E9242B1655020076008E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DFB1E9262B1655CC0076008E /* CoredataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataPersistanceManager.swift; sourceTree = "<group>"; };
 		DFD294102B197D6200DC1D12 /* RegisterToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterToken.swift; sourceTree = "<group>"; };
-		DFD294132B197E2100DC1D12 /* ReadToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadToken.swift; sourceTree = "<group>"; };
 		DFD294182B19FC9400DC1D12 /* UserPreferencesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesWorker.swift; sourceTree = "<group>"; };
 		DFD2941A2B19FE0F00DC1D12 /* RegisterFirstUserAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirstUserAccess.swift; sourceTree = "<group>"; };
 		DFD2941D2B19FEA400DC1D12 /* VerifyUserFirstAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyUserFirstAccess.swift; sourceTree = "<group>"; };
@@ -163,8 +164,12 @@
 		DFD294272B1A1B1700DC1D12 /* OnboardingComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingComposer.swift; sourceTree = "<group>"; };
 		DFD294292B1B68F400DC1D12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFD294312B1B73B300DC1D12 /* RemoteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDatabase.swift; sourceTree = "<group>"; };
-		DFD294332B1B741C00DC1D12 /* RemoteWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWallet.swift; sourceTree = "<group>"; };
 		DFD294352B1B749800DC1D12 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		DFD294372B1B75E700DC1D12 /* WalletMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletMapper.swift; sourceTree = "<group>"; };
+		DFD294392B1B97BC00DC1D12 /* FetchWallets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWallets.swift; sourceTree = "<group>"; };
+		DFD2943B2B1B97D200DC1D12 /* CreateWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWallet.swift; sourceTree = "<group>"; };
+		DFD2943D2B1B97DC00DC1D12 /* UpdateWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateWallet.swift; sourceTree = "<group>"; };
+		DFD2943F2B1B97E900DC1D12 /* DeleteWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteWallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +179,6 @@
 			files = (
 				DFB1E8E12B150B5F0076008E /* ComposableArchitecture in Frameworks */,
 				DFD2942D2B1B699A00DC1D12 /* FirebaseFirestore in Frameworks */,
-				DFD2942F2B1B699A00DC1D12 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +211,6 @@
 		DFA20AC32B16A36400A66663 /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
-				DFA20AF92B196EEB00A66663 /* Onboarding */,
 				DFA20AF02B19049B00A66663 /* WalletIconPicker */,
 				DFA20AEB2B17F25400A66663 /* WalletManager */,
 				DFA20AE82B17B55F00A66663 /* CoinPicker */,
@@ -364,6 +367,7 @@
 		DFB1E8E22B151B970076008E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DFA20AF92B196EEB00A66663 /* Onboarding */,
 				DFA20ADC2B17618900A66663 /* DisplayedModels */,
 				DFA20AD52B16CBD100A66663 /* Root */,
 				DFA20ACD2B16C8AC00A66663 /* Wallet */,
@@ -480,7 +484,6 @@
 			children = (
 				DFB1E8F82B15244F0076008E /* RemoteCoin.swift */,
 				DFB1E9162B162DBD0076008E /* RemoteDollarExchange.swift */,
-				DFD294332B1B741C00DC1D12 /* RemoteWallet.swift */,
 			);
 			path = RemoteModels;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB1E9042B152DEB0076008E /* CoinMapper.swift */,
+				DFD294372B1B75E700DC1D12 /* WalletMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -569,7 +573,10 @@
 		DFD294122B197D8F00DC1D12 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				DFD294132B197E2100DC1D12 /* ReadToken.swift */,
+				DFD294392B1B97BC00DC1D12 /* FetchWallets.swift */,
+				DFD2943B2B1B97D200DC1D12 /* CreateWallet.swift */,
+				DFD2943D2B1B97DC00DC1D12 /* UpdateWallet.swift */,
+				DFD2943F2B1B97E900DC1D12 /* DeleteWallet.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -617,7 +624,6 @@
 			packageProductDependencies = (
 				DFB1E8E02B150B5F0076008E /* ComposableArchitecture */,
 				DFD2942C2B1B699A00DC1D12 /* FirebaseFirestore */,
-				DFD2942E2B1B699A00DC1D12 /* FirebaseFirestoreSwift */,
 			);
 			productName = CryptoSphere;
 			productReference = DFB1E8AC2B1506350076008E /* CryptoSphere.app */;
@@ -742,7 +748,6 @@
 				DFB1E8F92B15244F0076008E /* RemoteCoin.swift in Sources */,
 				DFA20AE22B1777E000A66663 /* DisplayedWallet.swift in Sources */,
 				DFD294362B1B749800DC1D12 /* Wallet.swift in Sources */,
-				DFD294142B197E2100DC1D12 /* ReadToken.swift in Sources */,
 				DFA20ADE2B17619F00A66663 /* DisplayedCoin.swift in Sources */,
 				DFB1E9192B1635220076008E /* String+.swift in Sources */,
 				DFA20AF62B190B6D00A66663 /* TextPicker.swift in Sources */,
@@ -778,9 +783,9 @@
 				DFD2941B2B19FE0F00DC1D12 /* RegisterFirstUserAccess.swift in Sources */,
 				DFA20AEF2B17F2B400A66663 /* WalletManagerComposer.swift in Sources */,
 				DFA20AF42B19055800A66663 /* IconGallery.swift in Sources */,
+				DFD294382B1B75E700DC1D12 /* WalletMapper.swift in Sources */,
 				DFA20ACF2B16C8CD00A66663 /* WalletFeature.swift in Sources */,
 				DFA20B002B197A2100A66663 /* TokenWorker.swift in Sources */,
-				DFD294342B1B741C00DC1D12 /* RemoteWallet.swift in Sources */,
 				DFA20ABC2B1660AB00A66663 /* CoinRepository.swift in Sources */,
 				DFD294112B197D6200DC1D12 /* RegisterToken.swift in Sources */,
 				DFA20AE72B17B47400A66663 /* CoinPicker.swift in Sources */,
@@ -791,13 +796,17 @@
 				DFB1E9002B152AD90076008E /* Coin.swift in Sources */,
 				DFA20AC52B16A37D00A66663 /* InternetErrorView.swift in Sources */,
 				DFD294322B1B73B300DC1D12 /* RemoteDatabase.swift in Sources */,
+				DFD2943C2B1B97D200DC1D12 /* CreateWallet.swift in Sources */,
 				DFB1E8F32B1522FB0076008E /* EndpointProtocol.swift in Sources */,
 				DFA20AED2B17F26C00A66663 /* WalletManagerView.swift in Sources */,
+				DFD2943E2B1B97DC00DC1D12 /* UpdateWallet.swift in Sources */,
 				DFA20AF22B1904D700A66663 /* WalletIconPicker.swift in Sources */,
 				DFB1E9102B1619CD0076008E /* FontColors.swift in Sources */,
 				DFB1E9232B16499D0076008E /* CoinCache.xcdatamodeld in Sources */,
+				DFD2943A2B1B97BC00DC1D12 /* FetchWallets.swift in Sources */,
 				DFD294282B1A1B1700DC1D12 /* OnboardingComposer.swift in Sources */,
 				DFB1E90E2B1619B40076008E /* Backgrounds.swift in Sources */,
+				DFD294402B1B97E900DC1D12 /* DeleteWallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1159,11 +1168,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DFD2942B2B1B699A00DC1D12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
-		};
-		DFD2942E2B1B699A00DC1D12 /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DFD2942B2B1B699A00DC1D12 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -33,7 +33,7 @@ struct WalletManagerView: View {
                 VStack {
                     Spacer()
                     Button(viewModel.buttonActionLabel) {
-                        print("oi")
+                        viewModel.buttonHandler()
                     }
                     .disabled(viewModel.isDisabledButton())
                     .frame(

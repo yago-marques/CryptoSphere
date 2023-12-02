@@ -8,8 +8,11 @@
 import SwiftUI
 
 enum WalletManagerComposer {
-    static func make(mode: WalletManagerMode) -> some View {
-        let viewModel = WalletManagerViewModel(mode: mode)
+    static func make(
+        mode: WalletManagerMode,
+        handler: @escaping (Wallet) -> Void
+    ) -> some View {
+        let viewModel = WalletManagerViewModel(mode: mode, handler: handler)
         let view = WalletManagerView(viewModel: viewModel)
 
         return view
