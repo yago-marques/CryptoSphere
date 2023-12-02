@@ -10,6 +10,7 @@ import SwiftUI
 struct WalletCardHandlers {
     let presentEditWalletView: () -> Void
     let presentCoinPicker: () -> Void
+    let deleteWallet: () -> Void
 }
 
 struct WalletCard: View {
@@ -29,7 +30,7 @@ struct WalletCard: View {
                         .bold()
                         .font(.title2)
                         .foregroundStyle(DS.fontColors.primary)
-                    Text("\(wallet.coins.count) coins")
+                    Text("\(wallet.coins.count) \(wallet.coins.count == 1 ? "Coin" : "Coins")")
                         .foregroundStyle(DS.fontColors.secondary)
                 }
                 .padding(.leading, 5)
@@ -43,9 +44,11 @@ struct WalletCard: View {
                         "Add coins to wallet",
                         action: handlers.presentCoinPicker
                     )
-                    Button("Remove wallet", role: .destructive) {
-                        print("oi")
-                    }
+                    Button(
+                        "Remove wallet",
+                        role: .destructive,
+                        action: handlers.deleteWallet
+                    )
                 } label: {
                     Image(systemName: "ellipsis.circle")
                         .resizable()

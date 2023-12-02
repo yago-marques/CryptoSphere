@@ -46,4 +46,13 @@ struct WalletMapper {
         )
     }
 
+    static func toBusiness(from displayed: DisplayedWallet) -> Wallet {
+        .init(
+            id: displayed.id,
+            name: displayed.name,
+            image: displayed.image,
+            coins: displayed.coins
+        )
+    }
+
 }

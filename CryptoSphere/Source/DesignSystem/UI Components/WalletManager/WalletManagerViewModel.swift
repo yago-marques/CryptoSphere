@@ -10,6 +10,7 @@ import SwiftUI
 final class WalletManagerViewModel: ObservableObject {
     @Published var walletIcon = "defaultCoin"
     @Published var walletName = String()
+    @Published var walletCoins = [String]()
     let mode: WalletManagerMode
     var buttonActionLabel: String {
         return mode == .create ? "Create wallet" : "Update wallet"
@@ -39,13 +40,15 @@ final class WalletManagerViewModel: ObservableObject {
         if case let .editable(wallet) = mode {
             walletIcon = wallet.image
             walletName = wallet.name
+            walletCoins = wallet.coins
         }
     }
 
     func isWalletUpdated(_ wallet: DisplayedWallet) -> Bool {
         if
             wallet.image == walletIcon,
-            wallet.name == walletName
+            wallet.name == walletName,
+            wallet.coins.count == walletCoins.count
         {
             return false
         } else {
@@ -62,7 +65,7 @@ final class WalletManagerViewModel: ObservableObject {
                 id: oldWallet.id,
                 name: walletName,
                 image: walletIcon,
-                coins: oldWallet.coins
+                coins: walletCoins
             )
         case .create:
             wallet = .init(

@@ -8,7 +8,10 @@
 import SwiftUI
 
 enum CoinPickerComposer {
-    static func make() -> some View {
+    static func make(
+        registeredCoins: [String],
+        handler: @escaping ([String]) -> Void
+    ) -> some View {
         let httpClient = URLSessionHTTPClient(session: URLSession.shared)
         let coinLoader = RemoteCoinLoaderService(httpClient: httpClient)
         let cacheManager = CoinCacheManager(
@@ -16,7 +19,12 @@ enum CoinPickerComposer {
             cacheVersionRepository: CoredataPersistanceManager()
         )
         let fallback = ListCoinsFallback(coinLoader: coinLoader, cacheManager: cacheManager)
-        let view = CoinPicker(fallback: fallback)
+        let viewModel = CoinPickerViewModel(
+            fallback: fallback,
+            registeredCoins: registeredCoins,
+            handler: handler
+        )
+        let view = CoinPickerView(viewModel: viewModel)
 
         return view
     }

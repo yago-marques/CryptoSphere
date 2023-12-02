@@ -24,6 +24,16 @@ struct WalletManagerView: View {
 
                     TextPicker(text: $viewModel.walletName, title: "Wallet name:", placeholder: "Write wallet name")
                         .padding(.top, 30)
+
+                    if viewModel.mode != .create {
+                        ForEach(viewModel.walletCoins, id: \.self) { coin in
+                            CoinManageRow(coin: coin, handler: {
+                                viewModel
+                                    .walletCoins
+                                    .removeAll(where: { $0 == coin })
+                            })
+                        }
+                    }
                 }
                 .navigationTitle(viewModel.buttonActionLabel)
                 .navigationBarTitleDisplayMode(.inline)

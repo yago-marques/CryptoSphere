@@ -26,7 +26,10 @@ struct Components {
         )
     }
 
-    static func coinPicker() -> some View {
-        CoinPickerComposer.make()
+    static func coinPicker(
+        registeredCoins: [String],
+        handler: @escaping ([String]) -> Void
+    ) -> some View {
+        CoinPickerComposer.make(registeredCoins: registeredCoins, handler: handler)
     }
 }

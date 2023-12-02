@@ -15,7 +15,10 @@ struct WalletView: View {
                                 viewStore.send(.openWalletManagerToEdit(wallet: wallet))
                             },
                             presentCoinPicker: {
-                                viewStore.send(.openCoinPicker)
+                                viewStore.send(.openCoinPicker(wallet))
+                            },
+                            deleteWallet: {
+                                viewStore.send(.removeWallet(id: wallet.id))
                             }
                         )
                     )
@@ -39,16 +42,24 @@ struct WalletView: View {
                     }
                 }
             }
+            .overlay {
+                if viewStore.loading {
+                    ProgressView()
+                }
+            }
             .sheet(
                 isPresented: viewStore.binding(
                     get: { $0.shouldPresentCoinPicker },
-                    send: .openCoinPicker
+                    send: .openCoinPicker(viewStore.walletToEdit)
                 ),
                 onDismiss: {
                     viewStore.send(.closePicker)
                 }
             ) {
-                DS.components.coinPicker()
+                DS.components.coinPicker(
+                    registeredCoins: viewStore.walletToEdit.coins) { ids in
+                        viewStore.send(.registerNewCoins(ids, viewStore.walletToEdit))
+                    }
             }
             .sheet(
                 isPresented: viewStore.binding(

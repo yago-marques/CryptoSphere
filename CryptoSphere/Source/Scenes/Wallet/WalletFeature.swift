@@ -10,6 +10,7 @@ struct WalletFeature {
 
     struct State: Equatable {
         var wallets = [DisplayedWallet]()
+        var loading = false
         var shouldPresentCoinPicker = false
         var shouldPresentWalletManager = false
         var shouldPresentWalletManagerToEdit = false
@@ -20,7 +21,7 @@ struct WalletFeature {
         case onAppear
         case onAppearResponse(wallets: [DisplayedWallet])
         case updateTable
-        case openCoinPicker
+        case openCoinPicker(DisplayedWallet)
         case closePicker
         case openWalletManager
         case closeWalletmanager
@@ -28,6 +29,8 @@ struct WalletFeature {
         case closeWalletmanagerToEdit
         case createNewWallet(Wallet)
         case updateWallet(Wallet)
+        case registerNewCoins([String], DisplayedWallet)
+        case removeWallet(id: String)
     }
 
     var body: some Reducer<State, Action> {
@@ -35,6 +38,7 @@ struct WalletFeature {
             switch action {
             case .onAppear:
                 if state.wallets.isEmpty {
+                    state.loading = true
                     return .run { send in
                         await send(.updateTable)
                     }
@@ -43,6 +47,7 @@ struct WalletFeature {
                 }
 
             case .updateTable:
+                state.loading = true
                 return .run { send in
                     let wallets = try await useCases.fetchWallets()
                     let displayedWallets = wallets.map { WalletMapper.toDisplayed(from: $0) }
@@ -51,10 +56,12 @@ struct WalletFeature {
                 }
 
             case .onAppearResponse(wallets: let wallets):
+                state.loading = false
                 state.wallets = wallets
                 return .none
 
-            case .openCoinPicker:
+            case .openCoinPicker(let wallet):
+                state.walletToEdit = wallet
                 state.shouldPresentCoinPicker = true
                 return .none
 
@@ -92,6 +99,22 @@ struct WalletFeature {
                     try await useCases.updateWallet(wallet)
 
                     await send(.closeWalletmanagerToEdit)
+                    await send(.updateTable)
+                }
+            case .registerNewCoins(let coins, let wallet):
+                return .run { send in
+                    var walletToModify = WalletMapper.toBusiness(from: wallet)
+                    walletToModify.coins += coins
+                    try await useCases.updateWallet(walletToModify)
+
+                    await send(.closePicker)
+                    await send(.updateTable)
+                }
+
+            case .removeWallet(let id):
+                return .run { send in
+                    try await useCases.deleteWallet(id: id)
+
                     await send(.updateTable)
                 }
             }

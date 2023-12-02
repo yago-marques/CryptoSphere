@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-struct CoinPicker: View {
-    @State var coins = [DisplayedCoin]()
-    @State var selectedCoins = [String]()
-    @State var loading = false
-    let fallback: ListCoinsFallbackProtocol
+struct CoinPickerView: View {
+    @StateObject var viewModel: CoinPickerViewModel
 
     var body: some View {
         NavigationStack {
@@ -20,41 +17,31 @@ struct CoinPicker: View {
                 buttonToAdd
             }
             .overlay {
-                if loading {
+                if viewModel.loading {
                     ProgressView()
+                } else if viewModel.coins.isEmpty {
+                    Text("No available coin to add")
                 }
             }
         }
         .background(DS.backgrounds.secondary)
         .task {
-            Task {
-                do {
-                    loading = true
-                    coins = try await fallback.primary()
-                    loading = false
-                } catch {
-                    loading = false
-                    print("error")
-                }
-
-            }
+            await viewModel.fetchCoins()
         }
     }
 
     private var coinList: some View {
-        List(coins) { coin in
+        List(viewModel.coins) { coin in
             DS.components.coinCard(for: coin)
                 .listRowSeparator(.hidden)
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 .overlay {
                     Circle()
-                        .foregroundStyle(isSelected(coin.id) ? DS.backgrounds.action : DS.backgrounds.secondary)
+                        .foregroundStyle(viewModel.isSelected(coin.id) ? DS.backgrounds.action : DS.backgrounds.secondary)
                         .frame(width: 25, height: 25)
                         .offset(x: 150, y: -40)
                         .onTapGesture {
-                            isSelected(coin.id) ?
-                            selectedCoins.removeAll(where: { $0 == coin.id }) :
-                            selectedCoins.append(coin.id)
+                            viewModel.tapGestureHandler(id: coin.id)
                         }
                         .background {
                             Circle()
@@ -63,7 +50,7 @@ struct CoinPicker: View {
                                 .offset(x: 150, y: -40)
                         }
                         .overlay {
-                            if isSelected(coin.id) {
+                            if viewModel.isSelected(coin.id) {
                                 Image(systemName: "checkmark")
                                     .offset(x: 150, y: -40)
                             }
@@ -80,9 +67,9 @@ struct CoinPicker: View {
         VStack {
             Spacer()
             Button("Add to wallet") {
-                print("oi")
+                viewModel.addButtonHandler()
             }
-            .disabled(selectedCoins.isEmpty)
+            .disabled(viewModel.selectedCoins.isEmpty)
             .frame(
                 width: UIScreen.main.bounds.width * 0.9,
                 height: 50
@@ -97,9 +84,5 @@ struct CoinPicker: View {
             height: 70
         )
         .background(DS.backgrounds.primary)
-    }
-
-    func isSelected(_ coinId: String) -> Bool {
-        selectedCoins.contains(coinId)
     }
 }

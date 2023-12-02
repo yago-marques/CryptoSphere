@@ -11,5 +11,5 @@ struct Wallet: Equatable {
     let id: String
     let name: String
     let image: String
-    let coins: [String]
+    var coins: [String]
 }
