@@ -10,6 +10,6 @@ import Foundation
 struct DisplayedWallet: Equatable, Identifiable {
     let id: String
     let name: String
-    let image: Data
+    let image: String
     let coins: [String]
 }

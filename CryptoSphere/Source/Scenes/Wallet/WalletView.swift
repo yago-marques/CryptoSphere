@@ -8,9 +8,17 @@ struct WalletView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
                 List(viewStore.wallets) { wallet in
-                    DS.components.walletCard(for: wallet) {
-                        viewStore.send(.openCoinPicker)
-                    }
+                    DS.components.walletCard(
+                        for: wallet,
+                        handlers: .init(
+                            presentEditWalletView: {
+                                viewStore.send(.openWalletManagerToEdit(wallet: wallet))
+                            },
+                            presentCoinPicker: {
+                                viewStore.send(.openCoinPicker)
+                            }
+                        )
+                    )
                         .listRowSeparator(.hidden)
                         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 }
@@ -21,9 +29,11 @@ struct WalletView: View {
                 .toolbar {
                     ToolbarItem {
                         Button{
-                            print("oi")
+                            viewStore.send(.openWalletManager)
                         } label: {
-                            Text("Create new")
+                            Image(systemName: "plus.circle.fill")
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(DS.backgrounds.action)
                         }
                         .foregroundStyle(DS.backgrounds.action)
                     }
@@ -39,6 +49,28 @@ struct WalletView: View {
                 }
             ) {
                 DS.components.coinPicker()
+            }
+            .sheet(
+                isPresented: viewStore.binding(
+                    get: { $0.shouldPresentWalletManager },
+                    send: .openWalletManager
+                ),
+                onDismiss: {
+                    viewStore.send(.closeWalletmanager)
+                }
+            ) {
+                WalletManagerComposer.make(mode: .create)
+            }
+            .sheet(
+                isPresented: viewStore.binding(
+                    get: { $0.shouldPresentWalletManagerToEdit },
+                    send: .openWalletManagerToEdit(wallet: viewStore.walletToEdit)
+                ),
+                onDismiss: {
+                    viewStore.send(.closeWalletmanagerToEdit)
+                }
+            ) {
+                WalletManagerComposer.make(mode: .editable(wallet: viewStore.walletToEdit))
             }
             .onAppear {
                 viewStore.send(.onAppear)

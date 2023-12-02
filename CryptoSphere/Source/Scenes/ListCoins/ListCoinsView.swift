@@ -13,7 +13,6 @@ struct ListCoinsView: View {
                         .multilineTextAlignment(.center)
                         .padding([.leading, .trailing], 20)
                 }
-
                 if viewStore.internetErrorAndCacheNotAvailable {
                     DS.components.internetErrorView(message: viewStore.internetErrorMessage)
                 } else {
@@ -26,6 +25,11 @@ struct ListCoinsView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .listStyle(.plain)
                     .background(DS.backgrounds.secondary)
+                }
+            }
+            .overlay {
+                if viewStore.loading {
+                    ProgressView()
                 }
             }
             .onAppear {

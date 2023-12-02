@@ -25,8 +25,8 @@ struct ListCoinsFeature {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                state.loading = true
                 if state.coins.isEmpty {
+                    state.loading = true
                     return .run { send in
                         await fetchCoins(send)
                     }

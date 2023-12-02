@@ -2,25 +2,36 @@ import ComposableArchitecture
 import SwiftUI
 
 struct RootView: View {
+    let store: StoreOf<RootFeature>
 
-    init() {
+    init(store: StoreOf<RootFeature>) {
+        self.store = store
         setupTabBarStyle()
         setupNavigationBarStyle()
     }
 
     var body: some View {
-        TabView() {
-            ListCoinsComposer.make()
-                .tabItem {
-                    Image(systemName: "bitcoinsign.circle.fill")
-                    Text("Coins")
-                }
+        WithViewStore(store, observe: { $0 }) { viewStore in
+            if viewStore.isFirstAccess {
+                OnboardingComposer.make()
+            } else {
+                TabView() {
+                    ListCoinsComposer.make()
+                        .tabItem {
+                            Image(systemName: "bitcoinsign.circle.fill")
+                            Text("Coins")
+                        }
 
-            WalletComposer.make()
-                .tabItem {
-                    Image(systemName: "mail.stack.fill")
-                    Text("Carteira")
+                    WalletComposer.make()
+                        .tabItem {
+                            Image(systemName: "mail.stack.fill")
+                            Text("Carteira")
+                        }
                 }
+            }
+        }
+        .onAppear {
+            store.send(.onAppear)
         }
     }
 

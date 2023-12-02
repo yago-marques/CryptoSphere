@@ -7,14 +7,19 @@
 
 import SwiftUI
 
+struct WalletCardHandlers {
+    let presentEditWalletView: () -> Void
+    let presentCoinPicker: () -> Void
+}
+
 struct WalletCard: View {
     let wallet: DisplayedWallet
-    let handler: () -> Void
+    let handlers: WalletCardHandlers
 
     var body: some View {
         HStack {
             HStack {
-                Image(uiImage: .init(data: wallet.image) ?? .init(named: "defaultCoin")!)
+                Image(wallet.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100)
@@ -29,16 +34,26 @@ struct WalletCard: View {
                 }
                 .padding(.leading, 5)
                 Spacer()
-                Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundStyle(DS.backgrounds.action)
-                    .frame(width: 30)
-                    .padding(.trailing)
-                    .onTapGesture {
-                        handler()
+                Menu {
+                    Button(
+                        "Edit wallet",
+                        action: handlers.presentEditWalletView
+                    )
+                    Button(
+                        "Add coins to wallet",
+                        action: handlers.presentCoinPicker
+                    )
+                    Button("Remove wallet", role: .destructive) {
+                        print("oi")
                     }
-
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundStyle(DS.backgrounds.action)
+                        .frame(width: 25)
+                        .padding(.trailing)
+                }
             }
             .frame(width: UIScreen.main.bounds.width * 0.9)
             .background(DS.backgrounds.tertiary)

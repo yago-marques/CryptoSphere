@@ -18,9 +18,12 @@ struct Components {
 
     static func walletCard(
         for wallet: DisplayedWallet,
-        handler: @escaping () -> Void
+        handlers: WalletCardHandlers
     ) -> some View {
-        WalletCard(wallet: wallet, handler: handler)
+        WalletCard(
+            wallet: wallet,
+            handlers: handlers
+        )
     }
 
     static func coinPicker() -> some View {
