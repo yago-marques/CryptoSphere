@@ -73,6 +73,9 @@
 		DFD2942A2B1B68F400DC1D12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFD294292B1B68F400DC1D12 /* GoogleService-Info.plist */; };
 		DFD2942D2B1B699A00DC1D12 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DFD2942C2B1B699A00DC1D12 /* FirebaseFirestore */; };
 		DFD2942F2B1B699A00DC1D12 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DFD2942E2B1B699A00DC1D12 /* FirebaseFirestoreSwift */; };
+		DFD294322B1B73B300DC1D12 /* RemoteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294312B1B73B300DC1D12 /* RemoteDatabase.swift */; };
+		DFD294342B1B741C00DC1D12 /* RemoteWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294332B1B741C00DC1D12 /* RemoteWallet.swift */; };
+		DFD294362B1B749800DC1D12 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294352B1B749800DC1D12 /* Wallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +162,9 @@
 		DFD294252B1A192100DC1D12 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DFD294272B1A1B1700DC1D12 /* OnboardingComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingComposer.swift; sourceTree = "<group>"; };
 		DFD294292B1B68F400DC1D12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DFD294312B1B73B300DC1D12 /* RemoteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDatabase.swift; sourceTree = "<group>"; };
+		DFD294332B1B741C00DC1D12 /* RemoteWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWallet.swift; sourceTree = "<group>"; };
+		DFD294352B1B749800DC1D12 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +386,7 @@
 		DFB1E8E42B1521240076008E /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				DFD294302B1B738A00DC1D12 /* RemoteWalletLoader */,
 				DFD294152B19FC4100DC1D12 /* UserPreferencesWorker */,
 				DFA20AFC2B19765100A66663 /* SecurityTokenWorker */,
 				DFB1E91C2B1640EC0076008E /* CoinCacheManager */,
@@ -473,6 +480,7 @@
 			children = (
 				DFB1E8F82B15244F0076008E /* RemoteCoin.swift */,
 				DFB1E9162B162DBD0076008E /* RemoteDollarExchange.swift */,
+				DFD294332B1B741C00DC1D12 /* RemoteWallet.swift */,
 			);
 			path = RemoteModels;
 			sourceTree = "<group>";
@@ -489,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB1E8FF2B152AD90076008E /* Coin.swift */,
+				DFD294352B1B749800DC1D12 /* Wallet.swift */,
 			);
 			path = BusinessModels;
 			sourceTree = "<group>";
@@ -579,6 +588,14 @@
 				DFD2941D2B19FEA400DC1D12 /* VerifyUserFirstAccess.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		DFD294302B1B738A00DC1D12 /* RemoteWalletLoader */ = {
+			isa = PBXGroup;
+			children = (
+				DFD294312B1B73B300DC1D12 /* RemoteDatabase.swift */,
+			);
+			path = RemoteWalletLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,6 +741,7 @@
 				DFB1E9132B161DE80076008E /* CoinCard.swift in Sources */,
 				DFB1E8F92B15244F0076008E /* RemoteCoin.swift in Sources */,
 				DFA20AE22B1777E000A66663 /* DisplayedWallet.swift in Sources */,
+				DFD294362B1B749800DC1D12 /* Wallet.swift in Sources */,
 				DFD294142B197E2100DC1D12 /* ReadToken.swift in Sources */,
 				DFA20ADE2B17619F00A66663 /* DisplayedCoin.swift in Sources */,
 				DFB1E9192B1635220076008E /* String+.swift in Sources */,
@@ -762,6 +780,7 @@
 				DFA20AF42B19055800A66663 /* IconGallery.swift in Sources */,
 				DFA20ACF2B16C8CD00A66663 /* WalletFeature.swift in Sources */,
 				DFA20B002B197A2100A66663 /* TokenWorker.swift in Sources */,
+				DFD294342B1B741C00DC1D12 /* RemoteWallet.swift in Sources */,
 				DFA20ABC2B1660AB00A66663 /* CoinRepository.swift in Sources */,
 				DFD294112B197D6200DC1D12 /* RegisterToken.swift in Sources */,
 				DFA20AE72B17B47400A66663 /* CoinPicker.swift in Sources */,
@@ -771,6 +790,7 @@
 				DFA20AC02B16672600A66663 /* ListCoinsComposer.swift in Sources */,
 				DFB1E9002B152AD90076008E /* Coin.swift in Sources */,
 				DFA20AC52B16A37D00A66663 /* InternetErrorView.swift in Sources */,
+				DFD294322B1B73B300DC1D12 /* RemoteDatabase.swift in Sources */,
 				DFB1E8F32B1522FB0076008E /* EndpointProtocol.swift in Sources */,
 				DFA20AED2B17F26C00A66663 /* WalletManagerView.swift in Sources */,
 				DFA20AF22B1904D700A66663 /* WalletIconPicker.swift in Sources */,
