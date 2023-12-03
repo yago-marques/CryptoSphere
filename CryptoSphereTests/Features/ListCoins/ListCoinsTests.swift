@@ -4,12 +4,12 @@ import XCTest
 
 typealias ListCoinsFeatureSUT = (
     sut: TestStore<ListCoinsFeature.State, ListCoinsFeature.Action>,
-    fallback: ListCoinsFallbackSpy
+    fallback: ListCoinsFallbackMock
 )
 
 @MainActor
 final class ListCoinsTests: XCTestCase {
-    func testOnAppear_WhenInternetIsOK_ShouldDisplayCoins() async {
+    func test_OnAppear_WhenInternetIsOK_ShouldDisplayCoins() async {
         let (sut, fallback) = makeSUT()
 
         await sut.send(.onAppear) { state in
@@ -24,7 +24,7 @@ final class ListCoinsTests: XCTestCase {
         XCTAssertEqual(fallback.receivedMessages, [.primaryCalled])
     }
 
-    func testOnAppear_WhenInternetIsNotOKAndCacheIsValid_ShouldDisplayCachedCoins() async {
+    func test_OnAppear_WhenInternetIsNotOKAndCacheIsValid_ShouldDisplayCachedCoins() async {
         let (sut, fallback) = makeSUT()
         fallback.internetActivated = false
 
@@ -45,7 +45,7 @@ final class ListCoinsTests: XCTestCase {
         XCTAssertEqual(fallback.receivedMessages, [.primaryCalled, .secondaryCalled])
     }
 
-    func testOnAppear_WhenInternetIsNotOKAndCacheIsNotValid_ShouldDisplayErrorMessage() async {
+    func test_OnAppear_WhenInternetIsNotOKAndCacheIsNotValid_ShouldDisplayErrorMessage() async {
         let (sut, fallback) = makeSUT()
         fallback.internetActivated = false
         fallback.cachePopulated = false
@@ -63,7 +63,7 @@ final class ListCoinsTests: XCTestCase {
         XCTAssertEqual(fallback.receivedMessages, [.primaryCalled, .secondaryCalled])
     }
 
-    func testOnAppear_WhenCoinsStateIsNotEmpty_ShouldDoNothing() async {
+    func test_OnAppear_WhenCoinsStateIsNotEmpty_ShouldDoNothing() async {
         let (sut, fallback) = makeSUT()
 
         await sut.send(.onAppear) { state in
@@ -81,7 +81,7 @@ final class ListCoinsTests: XCTestCase {
 
 private extension ListCoinsTests {
     func makeSUT() -> ListCoinsFeatureSUT {
-        let fallback = ListCoinsFallbackSpy()
+        let fallback = ListCoinsFallbackMock()
         let store = TestStore(initialState: ListCoinsFeature.State()) {
             ListCoinsFeature(fallback: fallback)
         }

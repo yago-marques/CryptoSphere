@@ -10,7 +10,7 @@ import Foundation
 
 struct ListCoinsFallbackSpyError: Error {}
 
-final class ListCoinsFallbackSpy: ListCoinsFallbackProtocol {
+final class ListCoinsFallbackMock: ListCoinsFallbackProtocol {
     enum Message: Equatable {
         case primaryCalled
         case secondaryCalled

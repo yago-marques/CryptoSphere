@@ -11,7 +11,7 @@ typealias WalletFeatureSUT = (
 @MainActor
 final class WalletFeatureTests: XCTestCase {
     // MARK: onAppear
-    func testOnAppear_WhenInternetIsOKAndRemoteWalletsIsNotEmpty_ShouldDisplayWallets() async {
+    func test_OnAppear_WhenInternetIsOKAndRemoteWalletsIsNotEmpty_ShouldDisplayWallets() async {
         let (sut, (useCases, _)) = makeSUT()
         useCases.populate()
 
@@ -29,7 +29,7 @@ final class WalletFeatureTests: XCTestCase {
         }
     }
 
-    func testOnAppear_WhenInternetIsOKAndRemoteWalletsIsEmpty_ShouldDisplayEmptyWalletsMessage() async {
+    func test_OnAppear_WhenInternetIsOKAndRemoteWalletsIsEmpty_ShouldDisplayEmptyWalletsMessage() async {
         let (sut, _) = makeSUT()
 
         await sut.send(.onAppear) { state in
@@ -48,7 +48,7 @@ final class WalletFeatureTests: XCTestCase {
         }
     }
 
-    func testOnAppear_WhenInternetIsNotOK_ShouldDisplayInternetErrorMessage() async {
+    func test_OnAppear_WhenInternetIsNotOK_ShouldDisplayInternetErrorMessage() async {
         let (sut, (_, internetVerifier)) = makeSUT()
         internetVerifier.internetActivated = false
 
@@ -64,7 +64,7 @@ final class WalletFeatureTests: XCTestCase {
         }
     }
 
-    func testOnAppear_WhenWalletsStateIsNotEmpty_ShouldDoNothing() async {
+    func test_OnAppear_WhenWalletsStateIsNotEmpty_ShouldDoNothing() async {
         let (sut, (useCases, _)) = makeSUT()
         useCases.populate()
 
@@ -85,7 +85,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: openCoinPicker
-    func testOpenCoinPicker_ShouldPresentCoinPicker() async {
+    func test_OpenCoinPicker_ShouldPresentCoinPicker() async {
         let (sut, _) = makeSUT()
         let walletToAddCoins = DisplayedWallet(id: "teste", name: "", image: "", coins: [])
 
@@ -96,7 +96,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: closePicker
-    func testClosePicker_ShouldDismissCoinPicker() async {
+    func test_ClosePicker_ShouldDismissCoinPicker() async {
         let (sut, _) = makeSUT()
 
         let walletToAddCoins = DisplayedWallet(id: "teste", name: "", image: "", coins: [])
@@ -112,7 +112,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: openWalletManager
-    func testOpenWalletManager_ShouldPresentWalletManager() async {
+    func test_OpenWalletManager_ShouldPresentWalletManager() async {
         let (sut, _) = makeSUT()
 
         await sut.send(.openWalletManager) { state in
@@ -121,7 +121,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: closeWalletmanager
-    func testCloseWalletmanager_ShouldDismissWalletManager() async {
+    func test_CloseWalletmanager_ShouldDismissWalletManager() async {
         let (sut, _) = makeSUT()
 
         await sut.send(.openWalletManager) { state in
@@ -134,7 +134,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: openWalletManagerToEdit
-    func testOpenWalletManagerToEdit_ShouldPresentWalletManagerToEdit() async {
+    func test_OpenWalletManagerToEdit_ShouldPresentWalletManagerToEdit() async {
         let (sut, _) = makeSUT()
         let walletToEdit = DisplayedWallet(id: "teste", name: "", image: "", coins: [])
 
@@ -145,7 +145,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: closeWalletmanagerToEdit
-    func testCloseWalletmanagerToEdit_ShouldDismissWalletManagerToEdit() async {
+    func test_CloseWalletmanagerToEdit_ShouldDismissWalletManagerToEdit() async {
         let (sut, _) = makeSUT()
         let walletToEdit = DisplayedWallet(id: "", name: "", image: "", coins: [])
 
@@ -160,7 +160,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: createNewWallet
-    func testCreateNewWallet_WhenInternetIsConnected_ShouldUpdateTable() async {
+    func test_CreateNewWallet_WhenInternetIsConnected_ShouldUpdateTable() async {
         let (sut, (useCases, _)) = makeSUT()
         let walletToCreate = Wallet(id: "", name: "", image: "", coins: [])
 
@@ -186,7 +186,7 @@ final class WalletFeatureTests: XCTestCase {
         }
     }
 
-    func testCreateNewWallet_WhenInternetIsNotConnected_ShouldDisplayErrorMessage() async {
+    func test_CreateNewWallet_WhenInternetIsNotConnected_ShouldDisplayErrorMessage() async {
         let (sut, (_, internetVerifier)) = makeSUT()
         internetVerifier.internetActivated = false
         let walletToCreate = Wallet(id: "", name: "", image: "", coins: [])
@@ -203,7 +203,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: updateWallet
-    func testUpdateWallet_WhenInternetIsConnected_ShouldUpdateTable() async {
+    func test_UpdateWallet_WhenInternetIsConnected_ShouldUpdateTable() async {
         let (sut, (useCases, _)) = makeSUT()
         useCases.populate()
         let walletToUpdate = useCases.wallets.first!
@@ -232,7 +232,7 @@ final class WalletFeatureTests: XCTestCase {
         }
     }
 
-    func testUpdateWallet_WhenInternetIsNotConnected_ShouldDisplayErrorMessage() async {
+    func test_UpdateWallet_WhenInternetIsNotConnected_ShouldDisplayErrorMessage() async {
         let (sut, (useCases, internetVerifier)) = makeSUT()
         internetVerifier.internetActivated = false
         useCases.populate()
@@ -252,7 +252,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: registerNewCoins
-    func testRegisterNewCoins_WhenInternetIsConnected_ShouldUpdateTable() async {
+    func test_RegisterNewCoins_WhenInternetIsConnected_ShouldUpdateTable() async {
         let (sut, (useCases, _)) = makeSUT()
         useCases.populate()
         let walletToUpdate = useCases.wallets.first!
@@ -281,7 +281,7 @@ final class WalletFeatureTests: XCTestCase {
         }
     }
 
-    func testRegisterNewCoins_WhenInternetIsNotConnected_ShouldDisplayErrorMessage() async {
+    func test_RegisterNewCoins_WhenInternetIsNotConnected_ShouldDisplayErrorMessage() async {
         let (sut, (useCases, internetVerifier)) = makeSUT()
         internetVerifier.internetActivated = false
         useCases.populate()
@@ -301,7 +301,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: removeWallet
-    func testRemoveWallet_WhenInternetIsConnected_ShouldUpdateTable() async {
+    func test_RemoveWallet_WhenInternetIsConnected_ShouldUpdateTable() async {
         let (sut, (useCases, _)) = makeSUT()
         useCases.populate()
         let walletToDelete = useCases.wallets.first!
@@ -320,7 +320,7 @@ final class WalletFeatureTests: XCTestCase {
         }
     }
 
-    func testRemoveWallet_WhenInternetIsNotConnected_ShouldDisplayErrorMessage() async {
+    func test_RemoveWallet_WhenInternetIsNotConnected_ShouldDisplayErrorMessage() async {
         let (sut, (useCases, internetVerifier)) = makeSUT()
         internetVerifier.internetActivated = false
         useCases.populate()
@@ -334,7 +334,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: openWalletDetail
-    func testOpenWalletDetail_ShouldPresentWalletDetail() async {
+    func test_OpenWalletDetail_ShouldPresentWalletDetail() async {
         let (sut, _) = makeSUT()
         let walletToSee = DisplayedWallet(id: "", name: "", image: "", coins: [])
 
@@ -345,7 +345,7 @@ final class WalletFeatureTests: XCTestCase {
     }
 
     // MARK: closeWalletDetail
-    func testCloseWalletDetail_ShouldDismissWalletDetail() async {
+    func test_CloseWalletDetail_ShouldDismissWalletDetail() async {
         let (sut, _) = makeSUT()
         let walletToSee = DisplayedWallet(id: "", name: "", image: "", coins: [])
 
