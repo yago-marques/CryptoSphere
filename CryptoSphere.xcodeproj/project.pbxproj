@@ -82,6 +82,8 @@
 		DFD2944F2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2944E2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift */; };
 		DFD294512B1D0C8700DC1D12 /* VerifyConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294502B1D0C8700DC1D12 /* VerifyConnection.swift */; };
 		DFD294542B1D0DFF00DC1D12 /* InternetVerifierMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294532B1D0DFF00DC1D12 /* InternetVerifierMock.swift */; };
+		DFD294572B1D27B600DC1D12 /* ListCoinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294562B1D27B600DC1D12 /* ListCoinsTests.swift */; };
+		DFD2945A2B1D289B00DC1D12 /* ListCoinsFallbackSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294592B1D289B00DC1D12 /* ListCoinsFallbackSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		DFD2944E2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletFeatureUseCasesStub.swift; sourceTree = "<group>"; };
 		DFD294502B1D0C8700DC1D12 /* VerifyConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyConnection.swift; sourceTree = "<group>"; };
 		DFD294532B1D0DFF00DC1D12 /* InternetVerifierMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetVerifierMock.swift; sourceTree = "<group>"; };
+		DFD294562B1D27B600DC1D12 /* ListCoinsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsTests.swift; sourceTree = "<group>"; };
+		DFD294592B1D289B00DC1D12 /* ListCoinsFallbackSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsFallbackSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -602,6 +606,7 @@
 		DFD2944A2B1D00D200DC1D12 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				DFD294552B1D278A00DC1D12 /* ListCoins */,
 				DFD2944B2B1D00DE00DC1D12 /* Wallet */,
 			);
 			path = Features;
@@ -621,6 +626,23 @@
 			children = (
 				DFD2944E2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift */,
 				DFD294532B1D0DFF00DC1D12 /* InternetVerifierMock.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		DFD294552B1D278A00DC1D12 /* ListCoins */ = {
+			isa = PBXGroup;
+			children = (
+				DFD294582B1D285F00DC1D12 /* TestDoubles */,
+				DFD294562B1D27B600DC1D12 /* ListCoinsTests.swift */,
+			);
+			path = ListCoins;
+			sourceTree = "<group>";
+		};
+		DFD294582B1D285F00DC1D12 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				DFD294592B1D289B00DC1D12 /* ListCoinsFallbackSpy.swift */,
 			);
 			path = TestDoubles;
 			sourceTree = "<group>";
@@ -810,6 +832,8 @@
 			files = (
 				DFD2944D2B1D00F900DC1D12 /* WalletTests.swift in Sources */,
 				DFD294542B1D0DFF00DC1D12 /* InternetVerifierMock.swift in Sources */,
+				DFD2945A2B1D289B00DC1D12 /* ListCoinsFallbackSpy.swift in Sources */,
+				DFD294572B1D27B600DC1D12 /* ListCoinsTests.swift in Sources */,
 				DFD2944F2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

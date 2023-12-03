@@ -41,10 +41,8 @@ struct ListCoinsFeature {
 
             case .apiFailureAndCacheAvailable(cachedCoins: let cachedCoins):
                 state.loading = false
-                if !cachedCoins.isEmpty {
-                    state.cacheUsed = true
-                    state.coins = cachedCoins
-                }
+                state.cacheUsed = true
+                state.coins = cachedCoins
                 return .none
 
             case .setCacheMessage(message: let message):
