@@ -9,6 +9,7 @@ import Foundation
 
 final class OnboardingViewModel: ObservableObject {
     @Published var shouldPresentRoot = false
+    @Published var unexpectedError = false
     let userPreferences: RegisterFirstUserAccess
     let internalSecurity: RegisterToken
 
@@ -23,7 +24,7 @@ final class OnboardingViewModel: ObservableObject {
             userPreferences.registerFirstUserAccess()
             shouldPresentRoot = true
         } catch {
-            print(error)
+            unexpectedError = true
         }
     }
 }

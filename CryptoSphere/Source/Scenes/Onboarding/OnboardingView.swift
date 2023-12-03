@@ -40,5 +40,10 @@ struct OnboardingView: View {
         .fullScreenCover(isPresented: $viewModel.shouldPresentRoot) {
             RootComposer.make()
         }
+        .overlay {
+            if viewModel.unexpectedError {
+                DS.components.internetErrorView(message: "Unexpected internal error")
+            }
+        }
     }
 }

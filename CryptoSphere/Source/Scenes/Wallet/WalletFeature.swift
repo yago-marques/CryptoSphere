@@ -15,6 +15,7 @@ struct WalletFeature {
         var shouldPresentWalletManager = false
         var shouldPresentWalletManagerToEdit = false
         var shouldPresentWalletDetail = false
+        var emptyWallets = false
         var walletToEdit = DisplayedWallet(id: "", name: "", image: "", coins: [])
         var walletToSee = DisplayedWallet(id: "", name: "", image: "", coins: [])
         var internetError = false
@@ -37,6 +38,7 @@ struct WalletFeature {
         case openWalletDetail(DisplayedWallet)
         case closeWalletDetail
         case registerInternetError
+        case emptyWallets(Bool)
     }
 
     var body: some Reducer<State, Action> {
@@ -60,6 +62,7 @@ struct WalletFeature {
                         let wallets = try await useCases.fetchWallets()
                         let displayedWallets = wallets.map { WalletMapper.toDisplayed(from: $0) }
 
+                        await send(.emptyWallets(displayedWallets.isEmpty))
                         await send(.onAppearResponse(wallets: displayedWallets))
                     } catch {
                         await send(.registerInternetError)
@@ -165,6 +168,10 @@ struct WalletFeature {
             case .registerInternetError:
                 state.loading = false
                 state.internetError = true
+                return .none
+
+            case .emptyWallets(let listState):
+                state.emptyWallets = listState
                 return .none
             }
         }

@@ -24,6 +24,11 @@ struct CoinPickerView: View {
                 }
             }
         }
+        .overlay {
+            if viewModel.internetError {
+                DS.components.internetErrorView(message: "Connection error")
+            }
+        }
         .background(DS.backgrounds.secondary)
         .task {
             await viewModel.fetchCoins()

@@ -52,6 +52,8 @@ struct WalletView: View {
                     ProgressView()
                 } else if viewStore.internetError {
                     DS.components.internetErrorView(message: "Connection Error")
+                } else if viewStore.emptyWallets {
+                    Text("no wallet added, create the first one")
                 }
             }
             .sheet(

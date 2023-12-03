@@ -11,6 +11,7 @@ final class CoinPickerViewModel: ObservableObject {
     @Published var coins = [DisplayedCoin]()
     @Published var selectedCoins = [String]()
     @Published var loading = false
+    @Published var internetError = false
     let handler: ([String]) -> Void
     let registeredCoins: [String]
     let fallback: ListCoinsFallbackProtocol
@@ -34,7 +35,7 @@ final class CoinPickerViewModel: ObservableObject {
             loading = false
         } catch {
             loading = false
-            print("error")
+            internetError = true
         }
     }
 
