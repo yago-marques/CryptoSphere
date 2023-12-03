@@ -21,12 +21,14 @@ struct RootView: View {
                             Image(systemName: "bitcoinsign.circle.fill")
                             Text("Coins")
                         }
+                        .tag(0)
 
                     WalletComposer.make()
                         .tabItem {
                             Image(systemName: "mail.stack.fill")
                             Text("Wallets")
                         }
+                        .tag(1)
                 }
             }
         }

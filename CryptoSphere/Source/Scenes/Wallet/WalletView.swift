@@ -63,7 +63,7 @@ struct WalletView: View {
                     viewStore.send(.closeWalletDetail)
                 }
             ) {
-                    WalletSeeDetail(wallet: viewStore.walletToSee)
+                    DS.components.walletDetails(viewStore.walletToSee)
                 }
             .sheet(
                 isPresented: viewStore.binding(
@@ -88,9 +88,8 @@ struct WalletView: View {
                     viewStore.send(.closeWalletmanager)
                 }
             ) {
-                WalletManagerComposer
-                    .make(mode: .create) { wallet in
-                        viewStore.send(.createNewWallet(wallet))
+                DS.components.walletEditor(mode: .create) { wallet in
+                    viewStore.send(.createNewWallet(wallet))
                 }
             }
             .sheet(
@@ -102,12 +101,8 @@ struct WalletView: View {
                     viewStore.send(.closeWalletmanagerToEdit)
                 }
             ) {
-                WalletManagerComposer
-                    .make(
-                        mode: .editable(
-                            wallet: viewStore.walletToEdit
-                        )
-                    ) { wallet in
+                DS.components.walletEditor(
+                    mode: .editable(wallet: viewStore.walletToEdit)) { wallet in
                         viewStore.send(.updateWallet(wallet))
                     }
             }
@@ -116,8 +111,4 @@ struct WalletView: View {
             }
         }
     }
-}
-
-#Preview {
-    WalletComposer.make()
 }

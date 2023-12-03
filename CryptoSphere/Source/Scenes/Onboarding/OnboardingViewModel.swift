@@ -25,6 +25,5 @@ final class OnboardingViewModel: ObservableObject {
         } catch {
             print(error)
         }
-
     }
 }

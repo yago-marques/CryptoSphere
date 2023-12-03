@@ -19,10 +19,10 @@ struct WalletManagerView: View {
         NavigationStack {
             VStack {
                 ScrollView {
-                    WalletIconPicker(selectedAvatar: $viewModel.walletIcon)
+                    DS.components.walletIconPicker(icon: $viewModel.walletIcon)
                         .padding(.top, 20)
 
-                    TextPicker(text: $viewModel.walletName, title: "Wallet name:", placeholder: "Write wallet name")
+                    DS.components.textPicker(text: $viewModel.walletName, title: "Wallet name:", placeholder: "Write wallet name")
                         .padding(.top, 30)
 
                     if viewModel.mode != .create {

@@ -55,7 +55,3 @@ struct WalletSeeDetail: View {
         .background(DS.backgrounds.secondary)
     }
 }
-
-#Preview {
-    WalletSeeDetail(wallet: .init(id: "", name: "My Wallet", image: "w 3", coins: ["teste", "teste"]))
-}

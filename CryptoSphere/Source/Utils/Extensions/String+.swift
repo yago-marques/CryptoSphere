@@ -16,13 +16,11 @@ extension String {
             if char != "0", char != "." {
                 validNumbers += 1
             }
-
             if char != "." {
                 word.append(char)
             } else {
                 word.append(",")
             }
-
         }
 
         return word

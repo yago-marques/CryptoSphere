@@ -38,7 +38,3 @@ struct ListCoinsView: View {
         }
     }
 }
-
-#Preview {
-    ListCoinsComposer.make()
-}

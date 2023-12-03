@@ -24,7 +24,7 @@ struct WalletIconPicker: View {
             }
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .sheet(isPresented: $presentGallery) {
-                IconGallery(avatarToModify: $selectedAvatar)
+                DS.components.iconGallery(selectedIcon: $selectedAvatar)
             }
     }
 }

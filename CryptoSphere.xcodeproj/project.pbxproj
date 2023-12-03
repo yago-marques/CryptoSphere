@@ -376,8 +376,8 @@
 		DFB1E8E22B151B970076008E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				DFA20AF92B196EEB00A66663 /* Onboarding */,
 				DFA20ADC2B17618900A66663 /* DisplayedModels */,
+				DFA20AF92B196EEB00A66663 /* Onboarding */,
 				DFA20AD52B16CBD100A66663 /* Root */,
 				DFA20ACD2B16C8AC00A66663 /* Wallet */,
 				DFB1E8E32B151BA00076008E /* ListCoins */,
