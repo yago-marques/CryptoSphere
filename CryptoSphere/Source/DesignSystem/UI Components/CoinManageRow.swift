@@ -16,9 +16,10 @@ struct CoinManageRow: View {
             Text(coin)
             Spacer()
             Image(systemName: "trash")
-        }
-        .onTapGesture {
-            handler()
+                .foregroundStyle(.red)
+                .onTapGesture {
+                    handler()
+                }
         }
         .frame(width: UIScreen.main.bounds.width * 0.85)
         .padding()

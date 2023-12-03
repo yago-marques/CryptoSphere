@@ -8,6 +8,15 @@ struct RemoteDatabase {
     let database: Firestore
     let tokenLoader: ReadToken
     let walletCollectionKey = "wallets"
+
+    init(database: Firestore, tokenLoader: ReadToken) {
+        self.database = database
+        self.tokenLoader = tokenLoader
+
+        let settings = FirestoreSettings()
+        settings.cacheSettings = MemoryCacheSettings()
+        database.settings = settings
+    }
 }
 
 extension RemoteDatabase: CreateWallet {

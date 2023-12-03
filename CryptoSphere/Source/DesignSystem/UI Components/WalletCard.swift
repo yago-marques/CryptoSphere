@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WalletCardHandlers {
+    let pushSeeDetailsView: () -> Void
     let presentEditWalletView: () -> Void
     let presentCoinPicker: () -> Void
     let deleteWallet: () -> Void
@@ -36,6 +37,10 @@ struct WalletCard: View {
                 .padding(.leading, 5)
                 Spacer()
                 Menu {
+                    Button(
+                        "See Details",
+                        action: handlers.pushSeeDetailsView
+                    )
                     Button(
                         "Edit wallet",
                         action: handlers.presentEditWalletView
