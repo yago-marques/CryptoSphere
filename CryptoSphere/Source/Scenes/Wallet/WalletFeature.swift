@@ -7,6 +7,7 @@ typealias WalletFeatureUseCases = FetchWallets & DeleteWallet & UpdateWallet & C
 @Reducer
 struct WalletFeature {
     let useCases: WalletFeatureUseCases
+    let internetVerifier: VerifyConnection
 
     struct State: Equatable {
         var wallets = [DisplayedWallet]()
@@ -58,7 +59,7 @@ struct WalletFeature {
                 state.loading = true
                 return .run { send in
                     do {
-                        try await InternetVerifier.shared.tryConnection()
+                        try await internetVerifier.verifyConnection()
                         let wallets = try await useCases.fetchWallets()
                         let displayedWallets = wallets.map { WalletMapper.toDisplayed(from: $0) }
 
@@ -103,7 +104,7 @@ struct WalletFeature {
             case .createNewWallet(let wallet):
                 return .run { send in
                     do {
-                        try await InternetVerifier.shared.tryConnection()
+                        try await internetVerifier.verifyConnection()
                         try await useCases.createWallet(wallet)
 
                         await send(.closeWalletmanager)
@@ -117,7 +118,7 @@ struct WalletFeature {
             case .updateWallet(let wallet):
                 return .run { send in
                     do {
-                        try await InternetVerifier.shared.tryConnection()
+                        try await internetVerifier.verifyConnection()
                         try await useCases.updateWallet(wallet)
 
                         await send(.closeWalletmanagerToEdit)
@@ -127,10 +128,11 @@ struct WalletFeature {
                     }
 
                 }
+
             case .registerNewCoins(let coins, let wallet):
                 return .run { send in
                     do {
-                        try await InternetVerifier.shared.tryConnection()
+                        try await internetVerifier.verifyConnection()
                         var walletToModify = WalletMapper.toBusiness(from: wallet)
                         walletToModify.coins += coins
                         try await useCases.updateWallet(walletToModify)
@@ -146,14 +148,13 @@ struct WalletFeature {
             case .removeWallet(let id):
                 return .run { send in
                     do {
-                        try await InternetVerifier.shared.tryConnection()
+                        try await internetVerifier.verifyConnection()
                         try await useCases.deleteWallet(id: id)
 
                         await send(.updateTable)
                     } catch {
                         await send(.registerInternetError)
                     }
-
                 }
                 
             case .openWalletDetail(let wallet):

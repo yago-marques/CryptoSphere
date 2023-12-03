@@ -11,6 +11,26 @@ import Foundation
 final class WalletFeatureUseCasesStub: WalletFeatureUseCases {
 
     var wallets = [Wallet]()
+    var displayedWallets: [DisplayedWallet] {
+        return wallets.map { WalletMapper.toDisplayed(from: $0) }
+    }
+
+    func populate() {
+        wallets = [
+            .init(
+                id: "teste1",
+                name: "name",
+                image: "image",
+                coins: ["testeCoin"]
+            ),
+            .init(
+                id: "teste2",
+                name: "name",
+                image: "image",
+                coins: ["testeCoin"]
+            )
+        ]
+    }
 
     func createWallet(_ wallet: CryptoSphere.Wallet) async throws {
         wallets.append(wallet)

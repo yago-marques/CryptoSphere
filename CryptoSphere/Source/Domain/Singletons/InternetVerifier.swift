@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct InternetVerifier {
+struct InternetVerifier: VerifyConnection {
     static let shared = InternetVerifier()
 
-    func tryConnection() async throws {
+    private init() { }
+
+    func verifyConnection() async throws {
         let (_, _) = try await URLSession
             .shared
             .data(from: .init(string: "https://api.coingecko.com/api/v3/ping")!)

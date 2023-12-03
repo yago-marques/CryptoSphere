@@ -80,6 +80,8 @@
 		DFD294492B1CD11000DC1D12 /* InternetVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294482B1CD11000DC1D12 /* InternetVerifier.swift */; };
 		DFD2944D2B1D00F900DC1D12 /* WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2944C2B1D00F900DC1D12 /* WalletTests.swift */; };
 		DFD2944F2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2944E2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift */; };
+		DFD294512B1D0C8700DC1D12 /* VerifyConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294502B1D0C8700DC1D12 /* VerifyConnection.swift */; };
+		DFD294542B1D0DFF00DC1D12 /* InternetVerifierMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294532B1D0DFF00DC1D12 /* InternetVerifierMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +168,8 @@
 		DFD294482B1CD11000DC1D12 /* InternetVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetVerifier.swift; sourceTree = "<group>"; };
 		DFD2944C2B1D00F900DC1D12 /* WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTests.swift; sourceTree = "<group>"; };
 		DFD2944E2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletFeatureUseCasesStub.swift; sourceTree = "<group>"; };
+		DFD294502B1D0C8700DC1D12 /* VerifyConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyConnection.swift; sourceTree = "<group>"; };
+		DFD294532B1D0DFF00DC1D12 /* InternetVerifierMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetVerifierMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,6 +562,7 @@
 				DFD2943B2B1B97D200DC1D12 /* CreateWallet.swift */,
 				DFD2943D2B1B97DC00DC1D12 /* UpdateWallet.swift */,
 				DFD2943F2B1B97E900DC1D12 /* DeleteWallet.swift */,
+				DFD294502B1D0C8700DC1D12 /* VerifyConnection.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -605,10 +610,19 @@
 		DFD2944B2B1D00DE00DC1D12 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				DFD294522B1D0DD100DC1D12 /* TestDoubles */,
 				DFD2944C2B1D00F900DC1D12 /* WalletTests.swift */,
-				DFD2944E2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift */,
 			);
 			path = Wallet;
+			sourceTree = "<group>";
+		};
+		DFD294522B1D0DD100DC1D12 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				DFD2944E2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift */,
+				DFD294532B1D0DFF00DC1D12 /* InternetVerifierMock.swift */,
+			);
+			path = TestDoubles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -749,6 +763,7 @@
 				DFB1E8DD2B150AAB0076008E /* ListCoinsFeature.swift in Sources */,
 				DFA20AD22B16CA1200A66663 /* WalletView.swift in Sources */,
 				DFA20AD42B16CAFF00A66663 /* WalletComposer.swift in Sources */,
+				DFD294512B1D0C8700DC1D12 /* VerifyConnection.swift in Sources */,
 				DFB1E9152B162A550076008E /* CoinGeckoEndpoint.swift in Sources */,
 				DFA20AF82B194EB900A66663 /* WalletManagerViewModel.swift in Sources */,
 				DFB1E91B2B163E430076008E /* CoinCache.swift in Sources */,
@@ -794,6 +809,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD2944D2B1D00F900DC1D12 /* WalletTests.swift in Sources */,
+				DFD294542B1D0DFF00DC1D12 /* InternetVerifierMock.swift in Sources */,
 				DFD2944F2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

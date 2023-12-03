@@ -10,7 +10,10 @@ enum WalletComposer {
         )
 
         let store = Store(initialState: WalletFeature.State()) {
-            WalletFeature(useCases: walletUseCases)
+            WalletFeature(
+                useCases: walletUseCases,
+                internetVerifier: InternetVerifier.shared
+            )
         }
 
         let view = WalletView(store: store)
