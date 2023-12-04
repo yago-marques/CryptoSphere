@@ -23,7 +23,22 @@
 - [x] Unit test - XCTest
 - [x] SPM - swift package manager
 
-## 🤝 By
+## 👩🏾‍💻 High level programming
+- DI (Dependency injection)
+- Inversion of control
+- DRY (don`t repeat yourself)
+- Interface segregation
+- Single responsiblity
+- Liskov substitution
+
+## 👩🏾‍💻 Design patterns
+- Composer
+- Fallback
+- Singleton
+- State
+- Observer
+
+## 🤝 Author
 
 <table>
   <tr>
