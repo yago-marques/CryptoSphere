@@ -12,10 +12,6 @@ struct RemoteDatabase {
     init(database: Firestore, tokenLoader: ReadToken) {
         self.database = database
         self.tokenLoader = tokenLoader
-
-        let settings = FirestoreSettings()
-        settings.cacheSettings = MemoryCacheSettings()
-        database.settings = settings
     }
 }
 

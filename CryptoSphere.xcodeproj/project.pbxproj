@@ -86,6 +86,10 @@
 		DFD2945A2B1D289B00DC1D12 /* ListCoinsFallbackMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294592B1D289B00DC1D12 /* ListCoinsFallbackMock.swift */; };
 		DFD2945D2B1D333600DC1D12 /* RootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2945C2B1D333600DC1D12 /* RootTests.swift */; };
 		DFD294602B1D336200DC1D12 /* RootUseCasesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2945F2B1D336200DC1D12 /* RootUseCasesMock.swift */; };
+		DFD2946A2B1D3A0700DC1D12 /* CacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294692B1D3A0700DC1D12 /* CacheManagerTests.swift */; };
+		DFD2946D2B1D3A4000DC1D12 /* CoinRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2946C2B1D3A4000DC1D12 /* CoinRepositoryMock.swift */; };
+		DFD2946F2B1D3A5A00DC1D12 /* CacheVersionRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD2946E2B1D3A5A00DC1D12 /* CacheVersionRepositorySpy.swift */; };
+		DFD294712B1D4F5C00DC1D12 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD294702B1D4F5C00DC1D12 /* Date+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +182,10 @@
 		DFD294592B1D289B00DC1D12 /* ListCoinsFallbackMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoinsFallbackMock.swift; sourceTree = "<group>"; };
 		DFD2945C2B1D333600DC1D12 /* RootTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTests.swift; sourceTree = "<group>"; };
 		DFD2945F2B1D336200DC1D12 /* RootUseCasesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUseCasesMock.swift; sourceTree = "<group>"; };
+		DFD294692B1D3A0700DC1D12 /* CacheManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerTests.swift; sourceTree = "<group>"; };
+		DFD2946C2B1D3A4000DC1D12 /* CoinRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRepositoryMock.swift; sourceTree = "<group>"; };
+		DFD2946E2B1D3A5A00DC1D12 /* CacheVersionRepositorySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheVersionRepositorySpy.swift; sourceTree = "<group>"; };
+		DFD294702B1D4F5C00DC1D12 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +353,7 @@
 		DFB1E8BF2B1506360076008E /* CryptoSphereTests */ = {
 			isa = PBXGroup;
 			children = (
+				DFD294612B1D388F00DC1D12 /* Domain */,
 				DFD2944A2B1D00D200DC1D12 /* Features */,
 			);
 			path = CryptoSphereTests;
@@ -520,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB1E9182B1635220076008E /* String+.swift */,
+				DFD294702B1D4F5C00DC1D12 /* Date+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -669,6 +679,32 @@
 			path = TestDoubles;
 			sourceTree = "<group>";
 		};
+		DFD294612B1D388F00DC1D12 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DFD294682B1D39B300DC1D12 /* CoinCacheManager */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DFD294682B1D39B300DC1D12 /* CoinCacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				DFD2946B2B1D3A0E00DC1D12 /* TestDoubles */,
+				DFD294692B1D3A0700DC1D12 /* CacheManagerTests.swift */,
+			);
+			path = CoinCacheManager;
+			sourceTree = "<group>";
+		};
+		DFD2946B2B1D3A0E00DC1D12 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				DFD2946C2B1D3A4000DC1D12 /* CoinRepositoryMock.swift */,
+				DFD2946E2B1D3A5A00DC1D12 /* CacheVersionRepositorySpy.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -777,6 +813,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFD294712B1D4F5C00DC1D12 /* Date+.swift in Sources */,
 				DFA20AE42B17B0BF00A66663 /* WalletCard.swift in Sources */,
 				DFB1E9132B161DE80076008E /* CoinCard.swift in Sources */,
 				DFB1E8F92B15244F0076008E /* RemoteCoin.swift in Sources */,
@@ -855,7 +892,10 @@
 				DFD2944D2B1D00F900DC1D12 /* WalletTests.swift in Sources */,
 				DFD294602B1D336200DC1D12 /* RootUseCasesMock.swift in Sources */,
 				DFD2945D2B1D333600DC1D12 /* RootTests.swift in Sources */,
+				DFD2946D2B1D3A4000DC1D12 /* CoinRepositoryMock.swift in Sources */,
+				DFD2946F2B1D3A5A00DC1D12 /* CacheVersionRepositorySpy.swift in Sources */,
 				DFD294542B1D0DFF00DC1D12 /* InternetVerifierMock.swift in Sources */,
+				DFD2946A2B1D3A0700DC1D12 /* CacheManagerTests.swift in Sources */,
 				DFD2945A2B1D289B00DC1D12 /* ListCoinsFallbackMock.swift in Sources */,
 				DFD294572B1D27B600DC1D12 /* ListCoinsTests.swift in Sources */,
 				DFD2944F2B1D02F600DC1D12 /* WalletFeatureUseCasesStub.swift in Sources */,
