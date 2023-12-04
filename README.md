@@ -21,3 +21,18 @@ https://github.com/yago-marques/WeCare/assets/84297648/c504d956-131e-4e8d-8e5f-a
 - [x] Firebase - Firestore
 - [x] Unit test - XCTest
 - [x] SPM - swift package manager
+
+## 🤝 By
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yago-marques">
+        <img src="https://avatars.githubusercontent.com/u/84297648?v=4" width="100px;" alt="Foto de Yago Marques no GitHub"/><br>
+        <sub>
+          <b>Yago Marques</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
