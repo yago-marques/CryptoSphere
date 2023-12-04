@@ -9,7 +9,8 @@
 > An iOS app that lists the day's trending coins, with real-time updates. And it allows the user to set up cryptocurrency wallets, being able to create more than one wallet, depending on the objective.
 
 ## 🎥 DEMO
-https://github.com/yago-marques/WeCare/assets/84297648/c504d956-131e-4e8d-8e5f-a7f1b78063db
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/gehYJ-5Af_s/0.jpg)](https://www.youtube.com/watch?v=gehYJ-5Af_s)
+
 
 ## 👩🏾‍💻 Technologies
 - [x] SwiftUI
