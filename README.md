@@ -10,3 +10,14 @@
 
 ## 🎥 DEMO
 https://github.com/yago-marques/WeCare/assets/84297648/c504d956-131e-4e8d-8e5f-a7f1b78063db
+
+## 👩🏾‍💻 Technologies
+- [x] SwiftUI
+- [x] Clean Architecture
+- [x] TCA - The Composable Architecture
+- [x] MVVM (Design System components)
+- [x] CoreData, Keychain, UserDefaults
+- [x] API Rest (URLSession, async await, Codable)
+- [x] Firebase - Firestore
+- [x] Unit test - XCTest
+- [x] SPM - swift package manager
