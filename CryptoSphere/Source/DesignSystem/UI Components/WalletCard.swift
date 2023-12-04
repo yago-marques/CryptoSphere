@@ -1,9 +1,3 @@
-//
-//  WalletCard.swift
-//  CryptoSphere
-//
-//  Created by Yago Marques on 29/11/23.
-//
 
 import SwiftUI
 

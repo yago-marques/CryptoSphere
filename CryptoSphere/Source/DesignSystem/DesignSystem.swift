@@ -1,9 +1,3 @@
-//
-//  DesignSystem.swift
-//  CryptoSphere
-//
-//  Created by Yago Marques on 28/11/23.
-//
 
 import Foundation
 

@@ -1,9 +1,3 @@
-//
-//  WalletSeeDetail.swift
-//  CryptoSphere
-//
-//  Created by Yago Marques on 03/12/23.
-//
 
 import SwiftUI
 
